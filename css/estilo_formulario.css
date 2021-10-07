@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    
+    body {
+    background: #77fff5;
+    font-family: Arial, Sans-serif;
+    }
+
+    h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 15px;
+    color: cadetblue;
+    }
+    
+    .formulario {
+    background: rgba(0,0,0,.8) ;
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 35px;
+    }
+    
+    .formulario input {
+    display: block;
+    }
+    
+    .formulario input[type="text"],
+    .formulario textarea,
+    .formulario #cod_ins,
+    .formulario #cod_alma,
+    .formulario select {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 13px;
+    border:1px solid #226fc1;
+    font-size: 16px;
+    font-family: Arial;
+    }
+    
+    .formulario textarea {
+    min-height: 120px;
+    max-height: 300px;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 13px;
+    }
+    
+    .formulario input[type="text"]:focus,
+    .formulario input[type="email"]:focus,
+    .formulario input[type="number"]:focus,
+    .formulario textarea:focus {
+    border:2px solid #4fb560;
+    }
+    
+    .formulario input[type="submit"] {
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    border:1px solid #77fff5;
+    color: #77fff5;
+    background: none;
+    cursor: pointer;
+    border-radius: 13px;
+    font-size: 16px;
+    }
+    
+    .formulario input[type="submit"]:hover {
+    background: #77fff5;
+    color: rgba(0,0,0,.8) ;
+    }
+
+    .custom-file-input {
+        color: transparent;
+      }
+      .custom-file-input::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+      .custom-file-input::before {
+        content: 'Ingrese foto de perfil';
+        color: black;
+        display: inline-block;
+        background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+        border: 1px solid #999;
+        border-radius: 3px;
+        padding: 5px 8px;
+        outline: none;
+        white-space: nowrap;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 10pt;
+      }
+      .custom-file-input:hover::before {
+        border-color: black;
+      }
+      .custom-file-input:active {
+        outline: 0;
+      }
+      .custom-file-input:active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+      }
+      
+      body {
+        padding: 20px;
+      }
