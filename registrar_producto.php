@@ -1,6 +1,6 @@
 <?php
 
-$con=mysqli_connect("localhost","root","","enaexbom");
+$con=mysqli_connect("localhost","root","root","enaexbom");
 
 $sql="INSERT INTO producto SET cod_pro='".$_POST['cod_pro']."',nombre_pro='".$_POST['nombre_pro']."',desc_pro='".$_POST['desc_pro']."',tipo_pro='".$_POST['tipo_pro']."', foto='".$_FILES['foto']['name']."', modelo_pro='".$_POST['modelo_pro']."'  ";
 mysqli_query($con,$sql);

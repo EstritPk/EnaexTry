@@ -2,7 +2,7 @@
  
  session_start();
 
- $con=mysqli_connect("localhost","root","","enaexbom");
+ $con=mysqli_connect("localhost","root","root","enaexbom");
   
  if(isset($_SESSION['user']))
  {

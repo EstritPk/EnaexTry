@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con=mysqli_connect("localhost","root","","enaexbom");
+$con=mysqli_connect("localhost","root","root","enaexbom");
 if(isset($_SESSION['user']))
 {
 ?>
@@ -18,11 +18,6 @@ if(isset($_SESSION['user']))
        <h2>Bienvenido   <b><?php echo strtoupper($_SESSION['user']);?></b></h2>
        <a href="home.php">Regresa home</a>
        <a href="cerrar_sesion.php">Cerrar Sesión </a>
-
-        SALUDOS RICKELSON
-
-        WENA LOS KA
-
     </div>
         <form class="formulario" name="formulario" action="registrar_usuario.php" method="POST">
             <h1>Registro de Usuario</h1>
