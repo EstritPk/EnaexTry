@@ -17,7 +17,7 @@ if(isset($_SESSION['user']))
     <div id="session">
        <h2>Bienvenido   <b><?php echo strtoupper($_SESSION['user']);?></b></h2>
        <a href="home.php">Regresa home</a>
-       <a href="cerrar_sesion.php">visual estudio re culiao</a>
+       <a href="cerrar_sesion.php">Cerrar Sesion</a>
     </div>
         <form class="formulario" name="formulario" action="registrar_usuario.php" method="POST">
             <h1>Registro de Usuario</h1>
