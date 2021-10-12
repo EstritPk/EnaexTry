@@ -21,6 +21,8 @@ if(isset($_SESSION['user']))
 
         SALUDOS RICKELSON
 
+        WENA LOS KA
+
     </div>
         <form class="formulario" name="formulario" action="registrar_usuario.php" method="POST">
             <h1>Registro de Usuario</h1>
