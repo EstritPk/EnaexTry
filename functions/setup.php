@@ -2,7 +2,7 @@
 
 function conectar()
 {
-    $con=mysqli_connect("localhost","root","","enaexbom");
+    $con=mysqli_connect("localhost","root","root","enaexbom");
     return $con;
     
 }
