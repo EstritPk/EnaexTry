@@ -1,0 +1,33 @@
+#session{
+    background: #fff ; 
+    margin: 20px ;
+    padding: 20px;
+    
+}
+#session a{
+    background: rgb(221, 13, 13) ; 
+    margin: 5px ;
+    padding: 5px;
+    color:#fff;
+    float: right;
+}
+ 
+#cont {
+    background: #fff ;
+    width: 100px;
+    margin: 20px ;
+    padding: 20px;
+    border-radius: 25px;
+    text-align: center;
+   
+ }
+ 
+ a{
+     text-align: center;
+   color: rgba(0,0,0,.8);
+   text-decoration: none;  
+ }
+ img{
+     width: 50px;
+     
+ }

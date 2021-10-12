@@ -31,9 +31,8 @@
     }
     
     .formulario input[type="text"],
+    .formulario input[type="password"]
     .formulario textarea,
-    .formulario #cod_ins,
-    .formulario #cod_alma,
     .formulario select {
     width: 100%;
     padding: 20px;
@@ -59,7 +58,7 @@
     border:2px solid #4fb560;
     }
     
-    .formulario input[type="submit"] {
+    #btn{
     width: 200px;
     margin: 0 auto;
     padding: 10px;
@@ -70,8 +69,8 @@
     border-radius: 13px;
     font-size: 16px;
     }
-    
-    .formulario input[type="submit"]:hover {
+     
+    .formulario input[type="button"]:hover {
     background: #77fff5;
     color: rgba(0,0,0,.8) ;
     }
@@ -109,4 +108,9 @@
       
       body {
         padding: 20px;
+      }
+      img
+      {
+        width: 30px;
+        size: 10px;
       }

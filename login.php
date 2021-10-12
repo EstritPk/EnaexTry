@@ -3,6 +3,7 @@
 <head>
 <title>formulario</title>
 <link rel="stylesheet" href="css/estilo_login.css">
+<script src="js/validaciones.js"></script>
 </head>
 <body>
 
@@ -11,22 +12,25 @@
 
         <h2>Login</h2>
 
-        <form  action="consulta.php" method="POST">
+        <form name="formlogin"  action="validaciones.php" method="POST">
 
             <div class="inputBox">
 
-                <label for="frmusuario">Usuario</label><br>
-                <input type="text" id="frmusuario" name="frmusuario"><br>
+                <label for="fusuario">Usuario</label><br>
+                <input type="text" id="fusuario" name="fusuario"><br>
             </div>
             
             <div class="inputBox">
             
-                <label for="frmclave">Password</label><br>
+                <label for="fclave">Password</label><br>
             
-                <input type="password" id="frmclave" name="frmclave"><br>
+                <input type="password" id="fclave" name="fclave"><br>
             </div>
             
-            <button type="submit">Ingresar</button>
+            <a href="reg_usuario.php" >Registrar Usuario</a>
+
+            <button type="button" onclick="validarlogin()" >Ingresar</button>
+      
     
         </form>
     </div>

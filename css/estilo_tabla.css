@@ -1,0 +1,50 @@
+#lista {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    border-collapse: collapse;
+
+    width: 100%;
+
+  }
+
+  
+
+  #lista td, lista th {
+
+    border: 1px solid #ddd;
+
+    padding: 8px;
+
+  }
+
+  
+
+  #listatr:nth-child(even){background-color: #f2f2f2;}
+
+  
+
+  #lista tr:hover {background-color: #ddd;}
+
+  
+
+  #lista th {
+
+    padding-top: 12px;
+
+    padding-bottom: 12px;
+
+    text-align: left;
+
+    background-color: #04AA6D;
+
+    color: white;
+
+  }
+ 
+
+#foto
+{
+width: 10%;
+}
+
