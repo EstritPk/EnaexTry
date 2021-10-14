@@ -63,122 +63,104 @@ function validarformulario() {
 
 }
 
-function validarformlogin()
+
+function validarformproducto()
 {
-    if (document.formulariol.frut.value == "") {
+    if (document.formprod.cod_pro.value == "") {
+        alert("Debe Ingresar Codigo del Producto");
+        document.formprod.cod_pro.focus();
+        return false;
+    }
+    if (document.formprod.nombre_pro.value == "") {
+        alert("Debe Ingresar Nombre del Producto");
+        document.formprod.nombre_pro.focus();
+        return false;
+    }
+    if (document.formprod.desc_pro.value == "") {
+        alert("Debe Ingresar una Descripcion de Producto");
+        document.formprod.desc_pro.focus();
+        return false;
+    }
+    if (document.formprod.tipo_pro.value == "" || document.formprod.tipo_pro.value == 0) {
+        alert("Debe Ingresar Tipo de Producto");
+        document.formprod.tipo_pro.focus();
+        return false;
+    }
+    if (document.formprod.foto.value == "") {
+        alert("Debe Ingresar Imagen del Producto");
+        document.formprod.foto.focus();
+        return false;
+    }
+    if (document.formprod.modelo_pro.value == "") {
+        alert("Debe Ingresar Modelo del Producto");
+        document.formprod.modelo_pro.focus();
+        return false;
+    }
+
+      document.formprod.submit();
+
+}
+
+
+
+function validarsinogin(){
+    if (document.formulariol.frutl.value == "") {
         alert("Debe Ingresar Rut");
-        document.formulariol.frut.focus();
+        document.formulariol.frutl.focus();
         return false;
     }
-    if (document.formulariol.fnombre.value == "") {
+    if (document.formulariol.fnombrel.value == "") {
         alert("Debe Ingresar Nombre");
-        document.formulariol.fnombre.focus();
+        document.formulariol.fnombrel.focus();
         return false;
     }
-    if (document.formulariol.fappaterno.value == "") {
+    if (document.formulariol.fappaternol.value == "") {
         alert("Debe Ingresar Apellido Paterno");
-        document.formulariol.fappaterno.focus();
+        document.formulariol.fappaternol.focus();
         return false;
     }
-    if (document.formulariol.fapmaterno.value == "") {
+    if (document.formulariol.fapmaternol.value == "") {
         alert("Debe Ingresar Apellido Materno");
-        document.formulariol.fapmaterno.focus();
+        document.formulariol.fapmaternol.focus();
         return false;
     }
-    if (document.formulariol.fapmaterno.value == "") {
-        alert("Debe Ingresar Apellido Materno");
-        document.formulariol.fapmaterno.focus();
-        return false;
-    }
-    if (document.formulariol.fusuario.value == "") {
+    if (document.formulariol.fusuariol.value == "") {
         alert("Debe Ingresar Usuario");
-        document.formulariol.fusuario.focus();
+        document.formulariol.fusuariol.focus();
         return false;
     }
-    if (document.formulariol.fcargo.value == "") {
+    if (document.formulariol.fcargol.value == "") {
         alert("Debe Ingresar Cargo");
-        document.formulariol.fcargo.focus();
+        document.formulariol.fcargol.focus();
         return false;
     }
-    if (document.formulariol.fclave.value == "") {
+    if (document.formulariol.fclavel.value == "") {
         alert("Debe Ingresar Clave");
-        document.formulariol.fclave.focus();
+        document.formulariol.fclavel.focus();
         return false;
     }
-    if (document.formulariol.festado.value == "") {
+    if (document.formulariol.festadol.value == "" || document.formulariol.festadol.value == 0)  {
         alert("Debe Ingresar Estado");
-        document.formulariol.festado.focus();
+        document.formulariol.festadol.focus();
         return false;
     }
 
     document.formulariol.submit();
 }
 
-function validarformproducto()
+
+
+function validarforfam()
 {
-    if (document.formrep.cod_rep.value == "") {
-        alert("Debe Ingresar Codigo del Repuesto");
-        document.formrep.cod_rep.focus();
-        return false;
-    }
-    if (document.formrep.nombre_rep.value == "") {
-        alert("Debe Ingresar Nombre del repuesto");
-        document.formrep.nombre_rep.focus();
-        return false;
-    }
-    if (document.formrep.marca_rep.value == "") {
-        alert("Debe Ingresar marca del repuesto");
-        document.formrep.marca_rep.focus();
-        return false;
-    }
-    if (document.formrep.modelo_rep.value == "") {
-        alert("Debe Ingresar Modelo del repuesto");
-        document.formrep.modelo_rep.focus();
-        return false;
-    }
-    if (document.formrep.tag_rep.value == "" || document.formrep.tag_rep.value == 0) {
-        alert("Debe Ingresar TAG");
-        document.formrep.tag_rep.focus();
-        return false;
-    }
-    if (document.formrep.desc_rep.value == "") {
-        alert("Debe Ingresar descripcion del repuesto");
-        document.formrep.desc_rep.focus();
-        return false;
-    }
-
-    
-
-
-    document.formrep.submit();
+    if(document.formfam.desc_pro_f.value==""){
+    alert("Debe Ingresar Descripcion del tipo del Producto");
+    document.formfam.desc_pro_f.focus();
+    return false;
 }
-
-function validarformins()
-{
-    if(document.formins.cod_ins.value=="")
-    {
-        alert("Debe Ingresar Codigo del Insumo");
-        document.formins.cod_ins.focus();
-        return false;
-    }
-    if(document.formins.nombre_ins.value=="")
-    {
-       alert("Debe Ingresar Nombre del Insumo");
-       document.formins.nombre_ins.focus();
-      return false;
-    }
-    if(document.formins.desc_ins.value=="")
-    {
-        alert("Debe Ingresar una Descripcion");
-        document.formins.desc_ins.focus();
-        return false;
-    }
-    if(document.formins.tipo_ins.value=="" || document.formins.tipo_ins.value== 0)
-    {
-        alert("Debe seleccionar el tipo");
-        document.formins.tipo_ins.focus();
-        return false;
-    }
-    document.formins.submit();
+if (document.formfam.categoria.value == "" || document.formfam.categoria.value == 0) {
+    alert("Debe Ingresar Categoria del Producto");
+    document.formfam.categoria.focus();
+    return false;
 }
-
+document.formfam.submit();
+}
