@@ -57,6 +57,52 @@ function validarformulario() {
     document.formulario.submit();
 
 }
+function validarformulariosl() {
+    if (document.formulariosl.frut.value == "") {
+        alert("Debe Ingresar Rut");
+        document.formulariosl.frut.focus();
+        return false;
+    }
+    if (document.formulariosl.fnombre.value == "") {
+        alert("Debe Ingresar Nombre");
+        document.formulariosl.fnombre.focus();
+        return false;
+    }
+    if (document.formulariosl.fappaterno.value == "") {
+        alert("Debe Ingresar Apellido Paterno");
+        document.formulariosl.fappaterno.focus();
+        return false;
+    }
+    if (document.formulariosl.fapmaterno.value == "") {
+        alert("Debe Ingresar Apellido Materno");
+        document.formulariosl.fapmaterno.focus();
+        return false;
+    }
+    if (document.formulariosl.fusuario.value == "") {
+        alert("Debe Ingresar Usuario");
+        document.formulariosl.fusuario.focus();
+        return false;
+    }
+    if (document.formulariosl.fcargo.value == "") {
+        alert("Debe Ingresar Cargo");
+        document.formulariosl.fcargo.focus();
+        return false;
+    }
+    if (document.formulariosl.fclave.value == "") {
+        alert("Debe Ingresar Clave");
+        document.formulariosl.fclave.focus();
+        return false;
+    }
+    if (document.formulariosl.festado.value == "") {
+        alert("Debe Ingresar Estado");
+        document.formulariosl.festado.focus();
+        return false;
+    }
+
+    document.formulario.submit();
+
+}
+
 
 function validarformrepuestos()
 {
