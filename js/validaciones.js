@@ -33,11 +33,6 @@ function validarformulario() {
         document.formulario.fapmaterno.focus();
         return false;
     }
-    if (document.formulario.fapmaterno.value == "") {
-        alert("Debe Ingresar Apellido Materno");
-        document.formulario.fapmaterno.focus();
-        return false;
-    }
     if (document.formulario.fusuario.value == "") {
         alert("Debe Ingresar Usuario");
         document.formulario.fusuario.focus();
