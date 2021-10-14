@@ -41,7 +41,7 @@ if(isset($_SESSION['user']))
         <table id="lista">
             <tr>
                 <th>RUT</th>
-                <th>NombrNOMBREe</th>
+                <th>NOMBRE</th>
                 <th>APELLIDO PATERNO</th>
                 <th>APELLIDO MATERNO</th>
                 <th>USUARIO</th>
