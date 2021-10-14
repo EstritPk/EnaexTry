@@ -9,12 +9,8 @@ function validarlogin() {
         document.formlogin.fclave.focus();
         return false;
     }
-    
-    
     document.formlogin.submit();
 }
-
-
 
 function validarformulario() {
     if (document.formulario.frut.value == "") {
@@ -30,6 +26,11 @@ function validarformulario() {
     if (document.formulario.fappaterno.value == "") {
         alert("Debe Ingresar Apellido Paterno");
         document.formulario.fappaterno.focus();
+        return false;
+    }
+    if (document.formulario.fapmaterno.value == "") {
+        alert("Debe Ingresar Apellido Materno");
+        document.formulario.fapmaterno.focus();
         return false;
     }
     if (document.formulario.fapmaterno.value == "") {
@@ -61,105 +62,123 @@ function validarformulario() {
     document.formulario.submit();
 
 }
-function validarformulariosl() {
-    if (document.formulariosl.frut.value == "") {
+
+function validarformlogin()
+{
+    if (document.formulariol.frut.value == "") {
         alert("Debe Ingresar Rut");
-        document.formulariosl.frut.focus();
+        document.formulariol.frut.focus();
         return false;
     }
-    if (document.formulariosl.fnombre.value == "") {
+    if (document.formulariol.fnombre.value == "") {
         alert("Debe Ingresar Nombre");
-        document.formulariosl.fnombre.focus();
+        document.formulariol.fnombre.focus();
         return false;
     }
-    if (document.formulariosl.fappaterno.value == "") {
+    if (document.formulariol.fappaterno.value == "") {
         alert("Debe Ingresar Apellido Paterno");
-        document.formulariosl.fappaterno.focus();
+        document.formulariol.fappaterno.focus();
         return false;
     }
-    if (document.formulariosl.fapmaterno.value == "") {
+    if (document.formulariol.fapmaterno.value == "") {
         alert("Debe Ingresar Apellido Materno");
-        document.formulariosl.fapmaterno.focus();
+        document.formulariol.fapmaterno.focus();
         return false;
     }
-    if (document.formulariosl.fusuario.value == "") {
+    if (document.formulariol.fapmaterno.value == "") {
+        alert("Debe Ingresar Apellido Materno");
+        document.formulariol.fapmaterno.focus();
+        return false;
+    }
+    if (document.formulariol.fusuario.value == "") {
         alert("Debe Ingresar Usuario");
-        document.formulariosl.fusuario.focus();
+        document.formulariol.fusuario.focus();
         return false;
     }
-    if (document.formulariosl.fcargo.value == "") {
+    if (document.formulariol.fcargo.value == "") {
         alert("Debe Ingresar Cargo");
-        document.formulariosl.fcargo.focus();
+        document.formulariol.fcargo.focus();
         return false;
     }
-    if (document.formulariosl.fclave.value == "") {
+    if (document.formulariol.fclave.value == "") {
         alert("Debe Ingresar Clave");
-        document.formulariosl.fclave.focus();
+        document.formulariol.fclave.focus();
         return false;
     }
-    if (document.formulariosl.festado.value == "") {
+    if (document.formulariol.festado.value == "") {
         alert("Debe Ingresar Estado");
-        document.formulariosl.festado.focus();
+        document.formulariol.festado.focus();
         return false;
     }
 
-    document.formulario.submit();
-
+    document.formulariol.submit();
 }
 
-
-function validarformproductos()
+function validarformproducto()
 {
-    if (document.formprod.cod_pro.value == "") {
-        alert("Debe Ingresar Codigo del Producto");
-        document.formprod.cod_pro.focus();
+    if (document.formrep.cod_rep.value == "") {
+        alert("Debe Ingresar Codigo del Repuesto");
+        document.formrep.cod_rep.focus();
         return false;
     }
-    if (document.formprod.nombre_pro.value == "") {
-        alert("Debe Ingresar Nombre del Producto");
-        document.formprod.nombre_pro.focus();
+    if (document.formrep.nombre_rep.value == "") {
+        alert("Debe Ingresar Nombre del repuesto");
+        document.formrep.nombre_rep.focus();
         return false;
     }
-    if (document.formprod.desc_pro.value == "") {
-        alert("Debe Ingresar una Descripcion de Producto");
-        document.formprod.desc_pro.focus();
+    if (document.formrep.marca_rep.value == "") {
+        alert("Debe Ingresar marca del repuesto");
+        document.formrep.marca_rep.focus();
         return false;
     }
-    if (document.formprod.tipo_pro.value == "" || document.formprod.tipo_pro.value == 0) {
-        alert("Debe Ingresar Tipo de Producto");
-        document.formprod.tipo_pro.focus();
+    if (document.formrep.modelo_rep.value == "") {
+        alert("Debe Ingresar Modelo del repuesto");
+        document.formrep.modelo_rep.focus();
         return false;
     }
-    if (document.formprod.foto.value == "") {
-        alert("Debe Ingresar Imagen del Producto");
-        document.formprod.foto.focus();
+    if (document.formrep.tag_rep.value == "" || document.formrep.tag_rep.value == 0) {
+        alert("Debe Ingresar TAG");
+        document.formrep.tag_rep.focus();
         return false;
     }
-    if (document.formprod.modelo_pro.value == "") {
-        alert("Debe Ingresar Modelo del Producto");
-        document.formprod.modelo_pro.focus();
+    if (document.formrep.desc_rep.value == "") {
+        alert("Debe Ingresar descripcion del repuesto");
+        document.formrep.desc_rep.focus();
         return false;
     }
 
     
 
 
-    document.formprod.submit();
+    document.formrep.submit();
 }
 
-function validarforfam()
+function validarformins()
 {
-    if(document.formfam.desc_pro_f.value==""){
-        alert("Debe Ingresar Descripcion del tipo del Producto");
-        document.formfam.desc_pro_f.focus();
+    if(document.formins.cod_ins.value=="")
+    {
+        alert("Debe Ingresar Codigo del Insumo");
+        document.formins.cod_ins.focus();
         return false;
     }
-    if (document.formfam.categoria.value == "" || document.formfam.categoria.value == 0) {
-        alert("Debe Ingresar Categoria del Producto");
-        document.formfam.categoria.focus();
+    if(document.formins.nombre_ins.value=="")
+    {
+       alert("Debe Ingresar Nombre del Insumo");
+       document.formins.nombre_ins.focus();
+      return false;
+    }
+    if(document.formins.desc_ins.value=="")
+    {
+        alert("Debe Ingresar una Descripcion");
+        document.formins.desc_ins.focus();
         return false;
     }
-    
-    document.formfam.submit();
+    if(document.formins.tipo_ins.value=="" || document.formins.tipo_ins.value== 0)
+    {
+        alert("Debe seleccionar el tipo");
+        document.formins.tipo_ins.focus();
+        return false;
+    }
+    document.formins.submit();
 }
 

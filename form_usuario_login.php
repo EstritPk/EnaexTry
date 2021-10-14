@@ -8,7 +8,7 @@
         <script src="js/validaciones.js"></script>
     </head>
     <body>
-        <form class="formulario" name="formulariosl" action="registrar_usuario.php" method="POST">
+        <form class="formulario" name="formulariol" action="registrar_usuario_login.php" method="POST">
             <h1>Registro de Usuario</h1>
             <input type="text" id="frut" name="frut" placeholder="Rut" value="">
             <input type="text" id="fnombre" name="fnombre" placeholder="Nombre" value="">
@@ -18,12 +18,11 @@
             <input type="text" id="fcargo" name="fcargo" placeholder="Cargo" value="">
             <input type="password" id="fclave" name="fclave" placeholder="Clave" value="">
             <select id="festado" name="festado" placeholder="Estado"><br>>
-                <option value="1">Activo</option>
-                <option value="0">Inactivo</option>
+                <option  name="festado" value="1">Activo</option>
+                <option  name="festado" value="0">Inactivo</option>
             </select><br>
-            <input type="file" id="fimagen" name="fimagen" placeholder="Imagen" value="" class="custom-file-input"><br>
             
-            <input type="button" onclick="validarformulariosl()" value="Registrar">  
+            <input type="button" id="btn" onclick="validarformlogin()" value="Registrar">
         </form>    
     </body>    
 </html>    

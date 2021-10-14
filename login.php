@@ -17,7 +17,7 @@
                 <label for="fclave">Password</label><br>
                 <input type="password" id="fclave" name="fclave"><br>
             </div>
-            <a href="reg_usuario.php" >Registrar Usuario</a>
+            <a href="form_usuario_login.php" >Registrar Usuario</a>
             <button type="button" onclick="validarlogin()" >Ingresar</button>
         </form>
     </div>

@@ -10,4 +10,7 @@ mysqli_query(conectar(),$sql);
 header('Location:formulario.php');
 
 
+
+
+
 ?>
