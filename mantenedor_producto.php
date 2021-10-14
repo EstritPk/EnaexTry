@@ -23,7 +23,7 @@
        <a href="home.php">Regresa home</a>
        <a href="cerrar_sesion.php">Cerrar Sesión</a>
     </div>
-        <form class="formulario" name="formins" enctype="multipart/form-data" action="registrar_producto.php" method="POST">
+        <form class="formulario" name="formprod" enctype="multipart/form-data" action="registrar_producto.php" method="POST">
             <h1>Registro de Producto</h1>
             <input type="number" id="cod_pro" name="cod_pro" placeholder="Codigo" value="">
             <input type="text" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="">
@@ -39,7 +39,7 @@
             <input type="text" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="">
 
             
-            <input type="submit"  value="Registrar Producto">
+            <input type="button" onclick="validarformproductos()" id="btn" value="Registrar Producto">
         </form>
         <?php
 

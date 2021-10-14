@@ -9,9 +9,13 @@ function validarlogin() {
         document.formlogin.fclave.focus();
         return false;
     }
+    
+    
     document.formlogin.submit();
-
 }
+
+
+
 function validarformulario() {
     if (document.formulario.frut.value == "") {
         alert("Debe Ingresar Rut");
@@ -104,70 +108,58 @@ function validarformulariosl() {
 }
 
 
-function validarformrepuestos()
+function validarformproductos()
 {
-    if (document.formrep.cod_rep.value == "") {
-        alert("Debe Ingresar Codigo del Repuesto");
-        document.formrep.cod_rep.focus();
+    if (document.formprod.cod_pro.value == "") {
+        alert("Debe Ingresar Codigo del Producto");
+        document.formprod.cod_pro.focus();
         return false;
     }
-    if (document.formrep.nombre_rep.value == "") {
-        alert("Debe Ingresar Nombre del repuesto");
-        document.formrep.nombre_rep.focus();
+    if (document.formprod.nombre_pro.value == "") {
+        alert("Debe Ingresar Nombre del Producto");
+        document.formprod.nombre_pro.focus();
         return false;
     }
-    if (document.formrep.marca_rep.value == "") {
-        alert("Debe Ingresar marca del repuesto");
-        document.formrep.marca_rep.focus();
+    if (document.formprod.desc_pro.value == "") {
+        alert("Debe Ingresar una Descripcion de Producto");
+        document.formprod.desc_pro.focus();
         return false;
     }
-    if (document.formrep.modelo_rep.value == "") {
-        alert("Debe Ingresar Modelo del repuesto");
-        document.formrep.modelo_rep.focus();
+    if (document.formprod.tipo_pro.value == "" || document.formprod.tipo_pro.value == 0) {
+        alert("Debe Ingresar Tipo de Producto");
+        document.formprod.tipo_pro.focus();
         return false;
     }
-    if (document.formrep.tag_rep.value == "" || document.formrep.tag_rep.value == 0) {
-        alert("Debe Ingresar TAG");
-        document.formrep.tag_rep.focus();
+    if (document.formprod.foto.value == "") {
+        alert("Debe Ingresar Imagen del Producto");
+        document.formprod.foto.focus();
         return false;
     }
-    if (document.formrep.desc_rep.value == "") {
-        alert("Debe Ingresar descripcion del repuesto");
-        document.formrep.desc_rep.focus();
+    if (document.formprod.modelo_pro.value == "") {
+        alert("Debe Ingresar Modelo del Producto");
+        document.formprod.modelo_pro.focus();
         return false;
     }
 
     
 
 
-    document.formrep.submit();
+    document.formprod.submit();
 }
 
-function validarformins()
+function validarforfam()
 {
-    if(document.formins.cod_ins.value=="")
-    {
-        alert("Debe Ingresar Codigo del Insumo");
-        document.formins.cod_ins.focus();
+    if(document.formfam.desc_pro_f.value==""){
+        alert("Debe Ingresar Descripcion del tipo del Producto");
+        document.formfam.desc_pro_f.focus();
         return false;
     }
-    if(document.formins.nombre_ins.value=="")
-    {
-       alert("Debe Ingresar Nombre del Insumo");
-       document.formins.nombre_ins.focus();
-      return false;
-    }
-    if(document.formins.desc_ins.value=="")
-    {
-        alert("Debe Ingresar una Descripcion");
-        document.formins.desc_ins.focus();
+    if (document.formfam.categoria.value == "" || document.formfam.categoria.value == 0) {
+        alert("Debe Ingresar Categoria del Producto");
+        document.formfam.categoria.focus();
         return false;
     }
-    if(document.formins.tipo_ins.value=="" || document.formins.tipo_ins.value== 0)
-    {
-        alert("Debe seleccionar el tipo");
-        document.formins.tipo_ins.focus();
-        return false;
-    }
-    document.formins.submit();
+    
+    document.formfam.submit();
 }
+

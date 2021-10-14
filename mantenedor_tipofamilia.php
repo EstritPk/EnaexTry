@@ -23,9 +23,9 @@
        <a href="home.php">Regresa home</a>
        <a href="cerrar_sesion.php">Cerrar Sesión</a>
     </div>
-        <form class="formulario" name="formrep" action="registrar_tipofamilia.php" method="POST">
+        <form class="formulario" name="formfam" action="registrar_tipofamilia.php" method="POST">
             <h1>Registro de Tipo de Producto</h1>
-            <textarea name="desc_pro" id="desc_pro" placeholder="Descripcion del Tipo de producto"></textarea><br>
+            <textarea name="desc_pro_f" id="desc_pro_f" placeholder="Descripcion del Tipo de producto"></textarea><br>
             <select id="categoria" name="categoria" placeholder="Categoria"><br>>
                 <option name="categoria" value=" ">Seleccione el Tipo</option>
                 <option name="categoria" value="Herramienta">Herrmaienta</option>
@@ -33,7 +33,7 @@
                 <option name="categoria" value="Aseo">Aseo</option>
                 <option name="categoria" value="Lubricante">Lubricante</option>
             </select><br>
-            <input type="submit"  value="Registrar Tipo">
+            <input type="button" id="btn" onclick="validarforfam()"  value="Registrar Tipo">
         </form>
         <?php
 
@@ -52,7 +52,7 @@
         <?php  while($datos=mysqli_fetch_array($result)) { ?>
         <tr>
             <td><?php echo $datos['cod_pro']; ?></td>
-            <td><?php echo $datos['desc_pro']; ?></td>
+            <td><?php echo $datos['desc_pro_f']; ?></td>
             <td><?php echo $datos['categoria']; } ?></td>
         </tr>
         </table>
