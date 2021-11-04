@@ -54,7 +54,7 @@
                 <td><?php echo $datos['categoria']; } ?></td>
             </tr>
             </table>
-    <   /body>
+    </body>
     </html>
 <?php
 }else{
