@@ -28,7 +28,7 @@
             align: left;
             margin-left: 75px;
             width: 60%;
-            max-width: 700px;
+            max-width: 600px;
             margin-top: 150px;
         }
 
@@ -127,9 +127,6 @@
                     </button>
                     <br><br><br><br><br>
                     <a href="form_usuario_login.php" style="color: #fff;">¿ No tienes cuenta ? , Registrate aquí</a>
-                </div>
-                <div class="col">
-                       
                 </div>
             </div>
    

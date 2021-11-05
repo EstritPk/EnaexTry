@@ -5,16 +5,16 @@ body {
   
   .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #0F85DE;
   }
   
   .topnav a {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 13px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
   }
   
   .topnav a:hover {
@@ -23,7 +23,7 @@ body {
   }
   
   .topnav a.active {
-    background-color: #333;
+    background-color: #0F85DE;
     color: white;
   }
 
