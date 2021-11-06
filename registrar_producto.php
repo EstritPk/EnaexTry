@@ -9,4 +9,4 @@ move_uploaded_file($_FILES['foto']['tmp_name'],"images/fotos/".$_FILES['foto']['
 
 header('Location:mantenedor_producto.php');
 
-?>
+?> 
