@@ -92,6 +92,9 @@ if (isset($_SESSION['user'])) {
             .card h4 {
                 margin-top: 0.5em;
             }
+
+
+            
         </style>
     <body>
         <div class="topnav">
@@ -114,7 +117,7 @@ if (isset($_SESSION['user'])) {
                 <div class="icon">
                 <i class="bi bi-tools"></i>
                 </div>
-                <a href="mantenedor_producto.php" style="color:white; ">
+                <a href="modificar_usuario.php" style="color:white; ">
                 <h4>Modificar Usuario</h4>
                 </a>
                 <p>Haz click aquí para Modifcar Usuario.</p>
@@ -123,7 +126,7 @@ if (isset($_SESSION['user'])) {
                 <div class="icon">
                 <i class="bi bi-diagram-3"></i>
                 </div>
-                <a href="mantenedor_tipofamilia.php" style="color:white; ">
+                <a href="eliminar_usuario.php" style="color:white; ">
                     <h4>Eliminar Usuario</h4>
                 </a>
                 <p>Haz click aquí para Eliminar Usuario.</p>
