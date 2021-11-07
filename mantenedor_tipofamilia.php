@@ -24,46 +24,39 @@
         <link rel="stylesheet" href="css/estilo_formulario.css">
         <link rel="stylesheet" href="css/estilo_tabla.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <style>
-  #form{
-    width: 800px; 
-    margin:auto;
-  }
-  #grilla{
-    width: 900px; 
-    margin:auto;
-  }
-</style>
+    
 
         <script src="js/validaciones.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="bg-info">
     <div id="session">
        <h2>Bienvenido   <b><?php echo strtoupper($_SESSION['user']);?></b></h2>
        <a href="home.php">Regresa home</a>
        <a href="cerrar_sesion.php">Cerrar Sesión</a>
     </div>
 
-            <div class="card " id="form">
+            <div class="card container " id="form">
                 <div class="card-header">Registro de Tipo de Producto</div>
                 <div class="card-body">
 
-                        <form class="formulario" name="formfam" action="registrar_tipofamilia.php" method="POST" enctype="multipart/form-data" >
+                        <form class="formulario" name="formfam" action="registrar_tipofamilia.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
                  
 
-                        <input type="text" class="form-control" id="frmusuario" value="<?php echo $datosfa['desc_pro'];?>" name="frmusuario" required>
+                       
                      
-                    <textarea name="desc_pro" class="form-control" id="desc_pro" <?php echo $datosfa['cod_pro'];?> placeholder="Descripcion del Tipo de producto"></textarea><br>
+                    <textarea name="desc_pro" class="form-control" id="desc_pro"  placeholder="Descripcion del Tipo de producto"></textarea><br>
                     <select id="categoria" class="form-control" name="categoria" placeholder="Categoria"><br>
                         <option name="categoria" value=" ">Seleccione el Tipo</option>
-                        <option name="categoria" value="Herramienta"<?php if($datosfa['categoria']=="Herramienta"){?> selected <?php } ?>>Herrmaienta</option>
-                        <option name="categoria" value="Vestimenta"<?php if($datosfa['categoria']=="Vestimenta"){?> selected <?php } ?> >Vestimenta</option>
-                        <option name="categoria" value="Aseo"<?php if($datosfa['categoria']=="Aseo"){?> selected <?php } ?>>Aseo</option>
-                        <option name="categoria" value="Lubricante"<?php if($datosfa['categoria']=="Lubricante"){?> selected <?php } ?>>Lubricante</option>
+                        <option name="categoria" value="Herramienta"<?php if($datosfa['categoria']="Herramienta"){?> selected <?php } ?>>Herrmaienta</option>
+                        <option name="categoria" value="Vestimenta"<?php if($datosfa['categoria']="Vestimenta"){?> selected <?php } ?> >Vestimenta</option>
+                        <option name="categoria" value="Aseo"<?php if($datosfa['categoria']="Aseo"){?> selected <?php } ?>>Aseo</option>
+                        <option name="categoria" value="Lubricante"<?php if($datosfa['categoria']="Lubricante"){?> selected <?php } ?>>Lubricante</option>
                     </select><br>
-                    <input type="button" id="btn" onclick="validarforfam()"  value="Registrar Tipo">
+                    <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value="<?php echo $datosfa['cod_pro'];?>">
+
                     </form>
                 </div>
                     <div class="card-footer">
@@ -73,16 +66,16 @@
                             if(!isset($_GET['cod_pro']))
                             {
                                 ?>
-                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarregistro(this.value);">
+                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarforfam(this.value);">
                             <?php
                             }else{
                                 ?>
-                            <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarregistro(this.value);">
-                            <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarregistro(this.value);">
+                            <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarforfam(this.value);">
+                            <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarforfam(this.value);">
                             <?php
                             }
                             ?>
-                            <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarregistro(this.value);">
+                            <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarforfam(this.value);">
                  </div>
             </div>
                
@@ -97,7 +90,8 @@
             $sql = "SELECT * FROM familia_pro";
             $result = mysqli_query($con,$sql);
         ?>
-        <table id="grilla" class="table table-striped table-hover">
+   <br> <div class="container">                    
+        <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
             <tr>
                 <th>Codigo</th>
                 <th>Descripcion</th>
@@ -109,7 +103,7 @@
             <td><?php echo $datos['cod_pro'];?></td>
             <td><?php echo $datos['desc_pro'];?></td>
             <td><?php echo $datos['categoria'];?></td>
-            <td><a href="mantenedor_tipofamilia.php?cod_pro=<?php echo $datos['cod_pro'];?>"><img src="images/update.png"></a> | <a href="mantenedor_tipofamilia.php?cod_pro=<?php echo $datos['cod_pro'];?>"><img src="images/delete.png"></a>
+            <td><a href="mantenedor_tipofamilia.php?cod_pro=<?php echo $datos['cod_pro'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['cod_pro'];?>"><img src="images/delete.png"></a>
             <?php
         }
         ?> 
@@ -118,9 +112,10 @@
       
     
             </table>
+    </div>
     </body>
     </html>
-<?php
+<?php     
        
  } else{
     header("Location:error.php");
