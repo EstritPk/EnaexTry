@@ -152,9 +152,9 @@ function validarsinogin(){
 
 function validarforfam()
 {
-    if(document.formfam.desc_pro_f.value==""){
+    if(document.formfam.desc_pro.value==""){
     alert("Debe Ingresar Descripcion del tipo del Producto");
-    document.formfam.desc_pro_f.focus();
+    document.formfam.desc_pro.focus();
     return false;
 }
 if (document.formfam.categoria.value == "" || document.formfam.categoria.value == 0) {
