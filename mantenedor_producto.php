@@ -11,12 +11,59 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        
         <title>Formularios</title>
-        <link rel="stylesheet" href="css/estilo_formulario.css">
-        <link rel="stylesheet" href="css/estilo_tabla.css">
+        <link rel="stylesheet" href="css/estilo_navbar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <script src="js/validaciones.js"></script>
+        <style>
+            form {
+                align: left;
+                margin-left: 0px;
+                max-width: 250px;
+                max-height: 1000px;
+                margin-top: 0px;
+                background: #272D2D;
+                min-height: 100vh;
+            }
+
+            table {
+                margin-right: 15px;
+            }
+
+            .btn {
+                width: 100px;
+                height: 35px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 1.05rem;
+                border-radius: 15px;
+                box-shadow: 2px 2px 2px #ffffff;
+                color: #004CD6;
+                background: #ffffff;
+                position: relative;
+            }
+
+            #formus {}
+        </style>
     </head>
     <body>
+
+    <div class="topnav">
+            <a class="active">
+                <h3>Bienvenido <b><?php echo strtoupper($_SESSION['user']); ?></b></h3>
+            </a>
+            <a href="cerrar_sesion.php" class="cs">Cerrar Sesion</a>
+            <a href="home.php" class="el">Home</a>
+            <a href="mantenedor_producto.php" class="el">Producto</a>
+            <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
+        </div>
+
+
     <div id="session">
        <h2>Bienvenido   <b><?php echo strtoupper($_SESSION['user']);?></b></h2>
        <a href="home.php">Regresa home</a>
