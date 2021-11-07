@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+
   .topnav {
     overflow: hidden;
     background-color: #0F85DE;
@@ -12,7 +8,6 @@ body {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 10px 13px;
     text-decoration: none;
     font-size: 14px;
   }
@@ -25,20 +20,25 @@ body {
   .topnav a.active {
     background-color: #0F85DE;
     color: white;
+    margin-top: 0px;
   }
 
   .topnav a.el {
+    margin-top: 7px;
     float: right;
     text-align: center;
+    padding: 10px 13px;
   }
 
   .topnav a:hover.cs {
-    background-color: red;
+    background-color: #DA0037;
     color: black;
   }
 
 
   .topnav a.cs {
+    margin-top: 7px;
+    padding: 10px 13px;
     float: right;
     text-align: center;
   }

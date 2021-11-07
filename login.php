@@ -100,7 +100,7 @@
                         <i class="bi bi-person-fill" style="font-size: 37px; color: #ffffff;"></i>
                         </div>
                         <div class="col">
-                        <input type="text" class="form-control" id="fusuario"  placeholder="Usuario" name="fusuario" style="margin-top : 9px; margin-left:15px;">
+                        <input type="text" class="form-control" id="fusuario"  placeholder="Usuario" name="fusuario" style="margin-top : 9px; margin-left:15px; max-width:350px;">
                         </div>
                     </div>
                    
@@ -115,7 +115,7 @@
                         <i class="bi bi-lock-fill"  style="font-size: 37px; color: #ffffff;"></i>
                         </div>
                         <div class="col">
-                        <input type="password" class="form-control" id="fclave" placeholder="Password" name="fclave" style="margin-top : 10px; margin-left:15px;">
+                        <input type="password" class="form-control" id="fclave" placeholder="Password" name="fclave" style="margin-top : 10px; margin-left:15px; max-width:350px;">
                         </div>
                     </div>
 
