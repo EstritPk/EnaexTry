@@ -8,11 +8,6 @@ mysqli_query($con,$sql);
 //mysqli_query(conectar(),$sql);
 
 header('Location:eliminar_usuario.php');
-
-
-
-
-
 ?>
 
 

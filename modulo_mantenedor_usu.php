@@ -93,16 +93,25 @@ if (isset($_SESSION['user'])) {
                 margin-top: 0.5em;
             }
 
+            
+          
 
             
         </style>
     <body>
+        
         <div class="topnav">
             <a class="active">
                 <h3>Bienvenido <b><?php echo strtoupper($_SESSION['user']); ?></b></h3>
             </a>
             <a href="cerrar_sesion.php" class="cs">Cerrar Sesion</a>
+            <a href="home.php" class="el">Home</a>
+            <a href="mantenedor_producto.php" class="el">Producto</a>
+            <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
         </div>
+        <div class="row">
+            <div class="col" id="formus">
+                <form class="formulario" name="formulario" action="registrar_usuario.php" method="POST">
         <div class="a">
             <div class="card">
                 <div class="icon">
@@ -133,34 +142,39 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
 
-        <?php
-            $sql = "SELECT * FROM usuario";
-            $result = mysqli_query($con, $sql);
-            ?>
-            <table id="lista">
-                <tr>
-                    <th>RUT</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO PATERNO</th>
-                    <th>APELLIDO MATERNO</th>
-                    <th>USUARIO</th>
-                    <th>CARGO</th>
-                    <th>CLAVE</th>
-                    <th>ESTADO</th>
-                </tr>
-                <?php while ($datos = mysqli_fetch_array($result)) { ?>
+        <div class="col" style="margin-right: 75px; margin-top: 150px">
+                <?php
+                $sql = "SELECT * FROM usuario";
+                $result = mysqli_query($con, $sql);
+                ?>
+                <table id="lista" class="table">
                     <tr>
-                        <td><?php echo $datos['rut']; ?></td>
-                        <td><?php echo $datos['nombre']; ?></td>
-                        <td><?php echo $datos['appaterno']; ?></td>
-                        <td><?php echo $datos['apmaterno']; ?></td>
-                        <td><?php echo $datos['usuario']; ?></td>
-                        <td><?php echo $datos['cargo']; ?></td>
-                        <td><?php echo $datos['clave']; ?></td>
-                        <td><?php echo $datos['estado'];
-                        } ?></td>
+                        <th>RUT</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO PATERNO</th>
+                        <th>APELLIDO MATERNO</th>
+                        <th>USUARIO</th>
+                        <th>CARGO</th>
+                        <th>CLAVE</th>
+                        <th>ESTADO</th>
                     </tr>
-            </table>
+                    <?php while ($datos = mysqli_fetch_array($result)) { ?>
+                        <tr>
+                            <td style="min-width: 200px;"><?php echo $datos['rut']; ?></td>
+                            <td style="min-width: 200px;"><?php echo $datos['nombre']; ?></td>
+                            <td style="min-width: 200px;"><?php echo $datos['appaterno']; ?></td>
+                            <td style="min-width: 200px;"><?php echo $datos['apmaterno']; ?></td>
+                            <td style="min-width: 50px;"><?php echo $datos['usuario']; ?></td>
+                            <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
+                            <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
+                            <td><?php echo $datos['estado'];
+                            } ?></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+
+        </form>
 
     </body>    
 </html> 
