@@ -28,20 +28,11 @@ if (isset($_SESSION['user'])) {
                 <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
             </div>
 
-            <form class="formulario" name="formulario" action="registrar_usuario.php" method="POST">
+            <form class="formulario" name="formulario" action="delete_usuario.php" method="POST">
                 <h1>Eliminar Usuario</h1>
-                <input type="text" id="frut" name="frut" placeholder="Rut" value="">
+                <h3>Ingrese Nombre de Usuario a Eliminar</h3>
                 <input type="text" id="fnombre" name="fnombre" placeholder="Nombre" value="">
-                <input type="text" id="fappaterno" name="fappaterno" placeholder="Apellido Paterno" value="">
-                <input type="text" id="fapmaterno" name="fapmaterno" placeholder="Apellido Materno" value="">
-                <input type="text" id="fusuario" name="fusuario" placeholder="Usuario" value="">
-                <input type="text" id="fcargo" name="fcargo" placeholder="Cargo" value="">
-                <input type="password" id="fclave" name="fclave" placeholder="Clave" value="">
-                <select id="festado" name="festado" placeholder="Estado"><br>
-                    <option value="1">Activo</option>
-                    <option value="0">Inactivo</option>
-                </select><br>
-                <input type="button" id="btn" onclick="validarformulario()" value="Registrar">
+                <input type="button" value="Eliminar">
             </form>
             <?php
             $sql = "SELECT * FROM usuario";
