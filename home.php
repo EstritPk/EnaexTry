@@ -121,7 +121,7 @@ if (isset($_SESSION['user'])) {
                 <div class="icon">
                     <i class="bi bi-person-fill"></i>
                 </div>
-                <a href="modulo_mantenedor_usu.php" style="color:white; ">
+                <a href="mantenedor_usuario.php" style="color:white; ">
                     <h4>Registro de Usuarios</h4>
                 </a>
                 <p>Haz click aquí para Registrar Usuarios.</p>

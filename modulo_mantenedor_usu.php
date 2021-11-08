@@ -94,10 +94,9 @@ if (isset($_SESSION['user'])) {
             }
 
             
-          
-
-            
         </style>
+        </meta>
+    </head>
     <body>
         
         <div class="topnav">
@@ -109,38 +108,106 @@ if (isset($_SESSION['user'])) {
             <a href="mantenedor_producto.php" class="el">Producto</a>
             <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
         </div>
-        <div class="row">
-            <div class="col" id="formus">
-                <form class="formulario" name="formulario" action="registrar_usuario.php" method="POST">
-        <div class="a">
-            <div class="card">
-                <div class="icon">
-                    <i class="bi bi-person-fill"></i>
+        <div class="card container " id="form">
+                <div class="card-header">Mantenedor de Usuario</div>
+                <div class="card-body">
+
+                        <form class="formulario" name="formfam" action="registrar_tipofamilia.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
+                        <div class="row" style="margin-left: 10px;">
+                        <label for="frut" class="" style="color: #000;">Rut usuario: </label>
+                        <div class="col">
+                            <input type="text" id="frut" name="frut" placeholder="Rut" value="">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="fnombre" class="" style="color: #000;">Nombre usuario: </label>
+                        <div class="col">
+                            <input type="text" id="fnombre" name="fnombre" placeholder="Nombre" value="">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="fappaterno" class="" style="color: #000;">Apellido Paterno: </label>
+                        <div class="col">
+                            <input type="text" id="fappaterno" name="fappaterno" placeholder="Apellido Paterno" value="">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="fapmaterno" class="" style="color: #000;">Apellido Materno: </label>
+                        <div class="col">
+                            <input type="text" id="fapmaterno" name="fapmaterno" placeholder="Apellido Materno" value="">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="fusuario" class="" style="color: #000;">Nombre de Usuario: </label>
+                        <div class="col">
+                            <input type="text" id="fusuario" name="fusuario" placeholder="Usuario" value="">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="fcargo" class="" style="color: #000;">Cargo : </label>
+                        <div class="col">
+                            <input type="text" id="fcargo" name="fcargo" placeholder="Cargo" value="">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="fclave" class="" style="color: #000;">Password : </label>
+                        <div class="col">
+                            <input type="password" id="fclave" name="fclave" placeholder="Clave" value="">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row" style="margin-left: 10px;">
+                        <label for="festado" class="" style="color: #000;">Estado : </label>
+                        <div class="col">
+                            <select id="festado" name="festado" placeholder="Estado"><br>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select><br>
+                        </div>
+                    </div>
+                    <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value="<?php echo $datosfa['cod_pro'];?>">
+
+                    </form>
                 </div>
-                <a href="formulario.php" style="color:white; ">
-                    <h4>Ingresar Usuario</h4>
-                </a>
-                <p>Haz click aquí para Ingresar Usuarios.</p>
+                    <div class="card-footer">
+     
+                    <?php 
+
+                            if(!isset($_GET['cod_pro']))
+                            {
+                                ?>
+                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarforfam(this.value);">
+                            <?php
+                            }else{
+                                ?>
+                            <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarforfam(this.value);">
+                            <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarforfam(this.value);">
+                            <?php
+                            }
+                            ?>
+                            <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarforfam(this.value);">
+                 </div>
             </div>
-            <div class="card">
-                <div class="icon">
-                <i class="bi bi-tools"></i>
-                </div>
-                <a href="modificar_usuario.php" style="color:white; ">
-                <h4>Modificar Usuario</h4>
-                </a>
-                <p>Haz click aquí para Modifcar Usuario.</p>
-            </div>
-            <div class="card">
-                <div class="icon">
-                <i class="bi bi-diagram-3"></i>
-                </div>
-                <a href="eliminar_usuario.php" style="color:white; ">
-                    <h4>Eliminar Usuario</h4>
-                </a>
-                <p>Haz click aquí para Eliminar Usuario.</p>
-            </div>
-        </div>
 
         <div class="col" style="margin-right: 75px; margin-top: 150px">
                 <?php
@@ -172,7 +239,7 @@ if (isset($_SESSION['user'])) {
                         </tr>
                 </table>
             </div>
-        </div>
+        
 
         </form>
 

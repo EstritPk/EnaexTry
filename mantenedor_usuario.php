@@ -1,20 +1,7 @@
-
 <?php
- 
  session_start();
-
  include ("functions/setup.php");
-
-  
  if(isset($_SESSION['user'])){
-
-    if(isset($_GET['cod_pro']))
-    {
-        $sqlcod="select * from familia_pro where cod_pro=".$_GET['cod_pro'];
-        $rescod=mysqli_query(conectar(),$sqlcod);
-        $datosfa=mysqli_fetch_array($rescod);
-    }
-  
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,24 +25,28 @@
     </div>
 
             <div class="card container " id="form">
-                <div class="card-header">Registro de Tipo de Producto</div>
+                <div class="card-header">Mantenedor Usuario</div>
                 <div class="card-body">
 
-                        <form class="formulario" name="formfam" action="registrar_tipofamilia.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
+                    <form class="formantu" name="formantu" action="formulario.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
                  
-
+                    <input type="text" id="frutl" name="frutl" placeholder="Rut" value="">
+            <input type="text" id="fnombrel" name="fnombrel" placeholder="Nombre" value="">
+            <input type="text" id="fappaternol" name="fappaternol" placeholder="Apellido Paterno" value="">
+            <input type="text" id="fapmaternol" name="fapmaternol" placeholder="Apellido Materno" value="">
+            <input type="text" id="fusuariol" name="fusuariol" placeholder="Usuario" value="">
+            <input type="text" id="fcargol" name="fcargol" placeholder="Cargo" value="">
+            <input type="password" id="fclavel" name="fclavel" placeholder="Clave" value="">
+            <select id="festadol" name="festadol" placeholder="Estado"><br>>
+                <option  name="festadol" value="1">Activo</option>
+                <option  name="festadol" value="0">Inactivo</option>
+            </select><br>
                        
                      
-                    <textarea name="desc_pro" class="form-control" id="desc_pro"  placeholder="Descripcion del Tipo de producto"></textarea><br>
-                    <select id="categoria" class="form-control" name="categoria" placeholder="Categoria"><br>
-                        <option name="categoria" value=" ">Seleccione el Tipo</option>
-                        <option name="categoria" value="Herramienta"<?php if($datosfa['categoria']="Herramienta"){?> selected <?php } ?>>Herrmaienta</option>
-                        <option name="categoria" value="Vestimenta"<?php if($datosfa['categoria']="Vestimenta"){?> selected <?php } ?> >Vestimenta</option>
-                        <option name="categoria" value="Aseo"<?php if($datosfa['categoria']="Aseo"){?> selected <?php } ?>>Aseo</option>
-                        <option name="categoria" value="Lubricante"<?php if($datosfa['categoria']="Lubricante"){?> selected <?php } ?>>Lubricante</option>
-                    </select><br>
+                    
+                    <br>
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datosfa['cod_pro_f'];?>" >
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value="<?php echo $datosfa['usuario'];?>">
 
                     </form>
                 </div>
@@ -63,7 +54,7 @@
      
                     <?php 
 
-                            if(!isset($_GET['cod_pro']))
+                            if(!isset($_GET['usuario']))
                             {
                                 ?>
                             <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarforfam(this.value);">
@@ -87,30 +78,34 @@
    
         <?php
             $con=mysqli_connect("localhost","root","root","enaexbom");
-            $sql = "SELECT * FROM familia_pro";
+            $sql = "SELECT * FROM usuario";
             $result = mysqli_query($con,$sql);
         ?>
    <br> <div class="container">                    
-        <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
+   <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
             <tr>
-                <th>Codigo</th>
-                <th>Descripcion</th>
-                <th>Categoria</th>
-                <th>Action</th>
+            <th>RUT</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO PATERNO</th>
+                <th>APELLIDO MATERNO</th>
+                <th>USUARIO</th>
+                <th>CARGO</th>
+                <th>CLAVE</th>
+                <th>ESTADO</th>
             </tr>
         <?php  while($datos=mysqli_fetch_array($result)) { ?>
         <tr>
-            <td><?php echo $datos['cod_pro'];?></td>
-            <td><?php echo $datos['desc_pro_f'];?></td>
-            <td><?php echo $datos['categoria'];?></td>
-            <td><a href="mantenedor_tipofamilia.php?cod_pro=<?php echo $datos['cod_pro'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['cod_pro'];?>"><img src="images/delete.png"></a>
-            <?php
-        }
-        ?> 
-         </td>
-           </tr>
-      
-    
+        <td style="min-width: 200px;"><?php echo $datos['rut']; ?></td>
+                            <td style="min-width: 200px;"><?php echo $datos['nombre']; ?></td>
+                            <td style="min-width: 200px;"><?php echo $datos['appaterno']; ?></td>
+                            <td style="min-width: 200px;"><?php echo $datos['apmaterno']; ?></td>
+                            <td style="min-width: 50px;"><?php echo $datos['usuario']; ?></td>
+                            <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
+                            <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
+                            <td><?php echo $datos['estado'];
+                            } ?></td>
+                            <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['cod_pro'];?>"></a>
+            
             </table>
     </div>
     </body>
