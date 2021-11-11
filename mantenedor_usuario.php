@@ -28,7 +28,7 @@
                 <div class="card-header">Mantenedor Usuario</div>
                 <div class="card-body">
 
-                    <form class="formantu" name="formantu" action="formulario.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
+                    <form class="formantu" name="formantu" action="registrar_usuario.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
                  
                     <input type="text" id="frutl" name="frutl" placeholder="Rut" value="">
             <input type="text" id="fnombrel" name="fnombrel" placeholder="Nombre" value="">
@@ -46,18 +46,21 @@
                     
                     <br>
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                    <input type="hidden" class="form-control" id="idc" name="idoc" value="<?php echo $datosfa['usuario'];?>">
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value="<?php echo $datos['usuario'];?>">
 
                     </form>
                 </div>
                     <div class="card-footer">
      
+                    
+
+
                     <?php 
 
                             if(!isset($_GET['usuario']))
                             {
                                 ?>
-                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarforfam(this.value);">
+                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarformulariousuario()">
                             <?php
                             }else{
                                 ?>
@@ -92,6 +95,7 @@
                 <th>CARGO</th>
                 <th>CLAVE</th>
                 <th>ESTADO</th>
+                <th>EDITAR</th>
             </tr>
         <?php  while($datos=mysqli_fetch_array($result)) { ?>
         <tr>
@@ -104,7 +108,7 @@
                             <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
                             <td><?php echo $datos['estado'];
                             } ?></td>
-                            <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['cod_pro'];?>"></a>
+                        <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> <a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/delete.png"></a>
             
             </table>
     </div>
