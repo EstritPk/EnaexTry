@@ -55,7 +55,7 @@
                         <option name="categoria" value="Lubricante"<?php if($datosfa['categoria']="Lubricante"){?> selected <?php } ?>>Lubricante</option>
                     </select><br>
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datosfa['cod_pro_f'];?>" >
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datosfa['cod_pro'];?>" >
 
                     </form>
                 </div>
@@ -101,7 +101,7 @@
         <?php  while($datos=mysqli_fetch_array($result)) { ?>
         <tr>
             <td><?php echo $datos['cod_pro'];?></td>
-            <td><?php echo $datos['desc_pro_f'];?></td>
+            <td><?php echo $datos['desc_pro'];?></td>
             <td><?php echo $datos['categoria'];?></td>
             <td><a href="mantenedor_tipofamilia.php?cod_pro=<?php echo $datos['cod_pro'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['cod_pro'];?>"><img src="images/delete.png"></a>
             <?php
