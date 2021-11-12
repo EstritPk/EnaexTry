@@ -32,10 +32,11 @@ switch($op){
 }
 function ingresar()
 {                                            
-    $sql="INSERT INTO familia_pro SET desc_pro='".$_POST['desc_pro']."', categoria='".$_POST['categoria']."' ";
+    $sql="INSERT INTO usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
+clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
 mysqli_query(conectar(),$sql);
 
-header('Location:mantenedor_tipofamilia.php');
+header('Location:formulario.php');
 
 
 }

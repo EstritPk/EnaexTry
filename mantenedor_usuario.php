@@ -28,18 +28,18 @@
                 <div class="card-header">Mantenedor Usuario</div>
                 <div class="card-body">
 
-                    <form class="formantu" name="formantu" action="registrar_usuario.php" class="border border-warning" method="POST" enctype="multipart/form-data" >
+                    <form class="formantu" name="formantu" action="registrar_usuario.php" class="border border-warning" method="POST" >
                  
-                    <input type="text" id="frutl" name="frutl" placeholder="Rut" value="">
-            <input type="text" id="fnombrel" name="fnombrel" placeholder="Nombre" value="">
-            <input type="text" id="fappaternol" name="fappaternol" placeholder="Apellido Paterno" value="">
-            <input type="text" id="fapmaternol" name="fapmaternol" placeholder="Apellido Materno" value="">
-            <input type="text" id="fusuariol" name="fusuariol" placeholder="Usuario" value="">
-            <input type="text" id="fcargol" name="fcargol" placeholder="Cargo" value="">
-            <input type="password" id="fclavel" name="fclavel" placeholder="Clave" value="">
-            <select id="festadol" name="festadol" placeholder="Estado"><br>>
-                <option  name="festadol" value="1">Activo</option>
-                <option  name="festadol" value="0">Inactivo</option>
+                    <input type="text" id="frut" name="frut" placeholder="Rut" value="">
+            <input type="text" id="fnombre" name="fnombre" placeholder="Nombre" value="">
+            <input type="text" id="fappaterno" name="fappaterno" placeholder="Apellido Paterno" value="">
+            <input type="text" id="fapmaterno" name="fapmaterno" placeholder="Apellido Materno" value="">
+            <input type="text" id="fusuario" name="fusuario" placeholder="Usuario" value="">
+            <input type="text" id="fcargo" name="fcargo" placeholder="Cargo" value="">
+            <input type="password" id="fclave" name="fclave" placeholder="Clave" value="">
+            <select id="festado" name="festado" placeholder="Estado"><br>>
+                <option  name="festado" value="1">Activo</option>
+                <option  name="festado" value="0">Inactivo</option>
             </select><br>
                        
                      
@@ -53,14 +53,12 @@
                     <div class="card-footer">
      
                     
-
-
                     <?php 
 
                             if(!isset($_GET['usuario']))
                             {
                                 ?>
-                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarformulariousuario()">
+                            <input type="button" class="btn btn-primary" value="Registrar" id="btnregistrar" onclick="validarformulariousuario(this.value);">
                             <?php
                             }else{
                                 ?>

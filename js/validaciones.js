@@ -182,7 +182,13 @@ function validardeletusu()
 document.deleusu.submit();
 }
 
-function validarformulariousuario() {
+function validarformulariousuario(accion) {
+
+    document.formantu.frmaccion.value=accion;
+
+    if((accion=="Registrar") || (accion=="Modificar"))
+    {
+
     if (document.formantu.frut.value == "") {
         alert("Debe Ingresar Rut");
         document.formantu.frut.focus();
@@ -229,6 +235,7 @@ function validarformulariousuario() {
         return false;
     }
 
+    }
     document.formantu.submit();
 
 }
