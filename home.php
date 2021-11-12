@@ -1,13 +1,9 @@
 <?php
-
 session_start();
-
 if (isset($_SESSION['user'])) {
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <title>Formularios</title>
@@ -19,18 +15,15 @@ if (isset($_SESSION['user'])) {
                 padding: 0;
                 box-sizing: border-box;
             }
-
             body {
                 background-color: #004CD6;
             }
-
             .a {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
             }
-
             .card {
                 width: 250px;
                 height: 200px;
@@ -46,7 +39,6 @@ if (isset($_SESSION['user'])) {
                 cursor: pointer;
                 position: relative;
             }
-
             .card::before,
             .card::after {
                 content: '';
@@ -58,21 +50,17 @@ if (isset($_SESSION['user'])) {
                 border-radius: 15px 15px 0 0;
                 transition: all .4s;
             }
-
             .card::before {
                 top: 0;
             }
-
             .card:hover::before {
                 transform: translateY(-20px);
             }
-
             .card::after {
                 bottom: 10px;
                 height: 60%;
                 border-radius: 0 0 15px 15px;
             }
-
             .icon {
                 width: 60px;
                 height: 60px;
@@ -82,15 +70,12 @@ if (isset($_SESSION['user'])) {
                 align-items: center;
                 border-radius: 50%;
             }
-
             .card:hover .icon {
                 box-shadow: 0 0 10px red;
             }
-
             .icon i {
                 font-size: 1.5em;
             }
-
             .card p {
                 margin: 0.5em 0;
                 font-size: 0.8em;
@@ -98,12 +83,10 @@ if (isset($_SESSION['user'])) {
                 opacity: 0;
                 transition: all .4s;
             }
-
             .card:hover p {
                 display: block;
                 opacity: 1;
             }
-
             .card h4 {
                 margin-top: 0.5em;
             }
@@ -121,10 +104,10 @@ if (isset($_SESSION['user'])) {
                 <div class="icon">
                     <i class="bi bi-person-fill"></i>
                 </div>
-                <a href="mantenedor_usuario.php" style="color:white; ">
+                <a href="modulo_mantenedor_usu.php" style="color:white; ">
                     <h4>Registro de Usuarios</h4>
                 </a>
-                <p>Haz click aquí para Registrar Usuarios.</p>
+                <p>Haz click aquí para Ingresar al Modulo de Usuarios.</p>
             </div>
             <div class="card">
                 <div class="icon">
@@ -155,7 +138,6 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
     </body>
-
     </html>
 <?php
 } else {
