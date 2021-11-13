@@ -10,12 +10,7 @@ mysqli_query(conectar(),$sql);
 header('Location:formulario.php');
 
 
-if(isset($_GET['proeli']))
-{
-    $sql="DELETE FROM familia_pro  WHERE cod_pro=".$_GET['proeli'];
-        mysqli_query(conectar(),$sql);
-        header('Location:mantenedor_tipofamilia.php');
-}
+
 
 
 $op=$_POST['frmaccion'];
@@ -36,8 +31,15 @@ function ingresar()
 clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
 mysqli_query(conectar(),$sql);
 
-header('Location:formulario.php');
+header('Location:mantenedor_usuario.php');
 
+
+if(isset($_GET['proeli']))
+{
+    $sql="DELETE FROM familia_pro  WHERE cod_pro=".$_GET['proeli'];
+        mysqli_query(conectar(),$sql);
+        header('Location:mantenedor_tipofamilia.php');
+}
 
 }
 function modificar()

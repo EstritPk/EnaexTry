@@ -84,9 +84,9 @@
                 <td style="min-width: 50px;"><?php echo $datos['usuario']; ?></td>
                 <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
                 <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
-                <td><?php echo $datos['estado'];
-                } ?></td>
+                <td><?php echo $datos['estado']; } ?></td>
                 <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> <a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/delete.png"></a>
+                
             </table>
         </div>
     </body>
