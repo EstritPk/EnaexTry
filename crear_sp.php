@@ -2,6 +2,7 @@
 session_start();
 include ("functions/setup.php");
 if (isset($_SESSION['user']) ) {
+            
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -24,6 +25,14 @@ if (isset($_SESSION['user']) ) {
     <body>
         <div id="session">
 
+        <?php
+                   // include ("functions/setup.php");
+                    //$sql="select * from usuario where rut=".$_SESSION['user'];
+                   // $result=mysqli_query(conectar(),$sql);
+                   // $cont=mysqli_num_rows($result);
+                   // $datos=mysqli_fetch_array($result);
+        ?>
+
             <div class="topnav">
                 <a class="active">
                     <h3>Bienvenido <b><?php echo strtoupper($_SESSION['user']); ?></b></h3>
@@ -40,13 +49,13 @@ if (isset($_SESSION['user']) ) {
         <div class="card container">
         <div class="card-header"><h2 class="text-center">Solicitar Producto</h2></div>
                 <div class="card-body">
-            <form class="formulario" name="formulario" action="registrar_sp.php" method="POST">
+            <form class="formulario" name="formsp" action="registrar_sp.php" method="POST" enctype="multipart/form-data">
                
             
             
                 <div class="row p-2">
                     <div class="col">
-                       <input type="text" class="form-control" value="<?php echo "rut del usuario"; ?>" name="frut" readonly>
+                       <input type="text" class="form-control" value="<?php echo $datos=($_SESSION['rut']); ?>" name="frut" readonly>
                     </div>
                     <div class="col">
                         <input type="text" class="form-control" value="<?php echo ($_SESSION['user']); ?>" name="fnombre" readonly>
@@ -77,13 +86,14 @@ if (isset($_SESSION['user']) ) {
                
                     
                     
-                       
+                <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datosfa['cod_pro'];?>" >   
                 
                         
                       <br>
                    
                 <div class="mb-3">
-                    <textarea class="form-control" id="desc_solitud" placeholder="Descripcion del Solitud" rows="3"></textarea>
+                    <textarea class="form-control" id="des_sp" name="des_sp" placeholder="Descripcion del Solitud" ></textarea>
                 </div>
                 
                 
@@ -93,18 +103,59 @@ if (isset($_SESSION['user']) ) {
         <div class="card-footer justify-content-center ">
             <div class="  span7 center">
                
-                            <input type="button" class="btn btn-primary " value="Registrar" id="btnregistrar" onclick="validarforfam(this.value);">
+                            <input type="button" class="btn btn-primary " value="Registrar" id="btnregistrar" onclick="validarsolicitud(this.value);">
                          
                            
-                            <input type="button" class="btn btn-success " value="Modificar" id="btnmodificar" onclick="validarforfam(this.value);">
-                            <input type="button" class="btn btn-danger " value="Eliminar" id="btneliminar" onclick="validarforfam(this.value);">
+                            <input type="button" class="btn btn-success " value="Modificar" id="btnmodificar" onclick="validarsolicitud(this.value);">
+                            <input type="button" class="btn btn-danger " value="Eliminar" id="btneliminar" onclick="validarsolicitud(this.value);">
                             
                             
-                            <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarforfam(this.value);">
+                            <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarsolicitud(this.value);">
                 </div>
                     </div>
         </div>
-            
+           
+        
+        <?php
+            $con=mysqli_connect("localhost","root","root","enaexbom");
+            $sql = "SELECT * FROM solicitud_pro where rut_usu=".$datos=($_SESSION['rut']);;
+            $result = mysqli_query($con,$sql);
+        ?>
+   <br> <div class="container">                    
+        <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
+            <tr>
+                <th>id</th>
+                <th>Rut solicitante</th>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Descripcion</th>
+                <th>estado</th>
+                <th>Editar</th>
+            </tr>
+        <?php  while($datos=mysqli_fetch_array($result)) { ?>
+        <tr>
+            <td><?php echo $datos['Id'];?></td>
+            <td><?php echo $datos['nombre_usu'];?></td>
+            <td><?php echo $datos['fecha_sp'];?></td>
+            <td><?php echo $datos['codigo_prod'];?></td>
+            <td><?php echo $datos['cantidad'];?></td>
+            <td><?php echo $datos['descripcion'];?></td>
+            <td><?php echo $datos['estado'];?></td>
+            <td><a href="crea_sp.php?id=<?php echo $datos['id'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['id'];?>"><img src="images/delete.png"></a>
+            <?php
+        }
+        ?> 
+         </td>
+           </tr>
+      
+    
+            </table>
+    </div>
+
+
+
+
     </body>
 
 </html>

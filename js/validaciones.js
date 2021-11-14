@@ -12,6 +12,29 @@ function validarlogin() {
     document.formlogin.submit();
 }
 
+function validarsolicitud(accion)
+{
+   
+    document.formsp.frmaccion.value=accion;
+
+    if((accion=="Registrar") || (accion=="Modificar"))
+    {
+  
+    if(document.formsp.des_sp.value==""){
+    alert("Debe Ingresar Descripcion del tipo del Producto");
+    document.formsp.desc_sp.focus();
+    return false;
+}
+if (document.formsp.sop.value == "" || document.formsp.sop.value == 0) {
+    alert("Debe Ingresar Categoria del Producto");
+    document.formsp.sop.focus();
+    return false;
+}
+    }
+document.formsp.submit();
+}
+
+
 function validarformulario() {
     if (document.formulario.frut.value == "") {
         alert("Debe Ingresar Rut");
@@ -171,6 +194,10 @@ if (document.formfam.categoria.value == "" || document.formfam.categoria.value =
     }
 document.formfam.submit();
 }
+
+
+
+
 
 function validardeletusu()
 {
