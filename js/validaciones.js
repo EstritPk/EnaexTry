@@ -172,15 +172,7 @@ if (document.formfam.categoria.value == "" || document.formfam.categoria.value =
 document.formfam.submit();
 }
 
-function validardeletusu()
-{
-    if(document.deleusu.frut.value==""){
-    alert("Debe Ingresar Rut del Usuario que desea Eliminar.");
-    document.deleusu.frut.focus();
-    return false;
-    }
-document.deleusu.submit();
-}
+
 
 function validarformulariousuario(accion) {
     document.formantu.frmaccion.value=accion;

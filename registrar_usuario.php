@@ -36,25 +36,26 @@ header('Location:mantenedor_usuario.php');
 
 if(isset($_GET['proeli']))
 {
-    $sql="DELETE FROM familia_pro  WHERE cod_pro=".$_GET['proeli'];
+    $sql="DELETE FROM usuario  WHERE usuario=".$_GET['proeli'];
         mysqli_query(conectar(),$sql);
-        header('Location:mantenedor_tipofamilia.php');
+        header('Location:mantenedor_usuario.php');
 }
 
 }
 function modificar()
 {
-    $sql="UPDATE   familia_pro SET desc_pro='".$_POST['desc_pro']."', categoria='".$_POST['categoria']."'  WHERE cod_pro=".$_POST['idoc'];
+    $sql="UPDATE   usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
+    clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
 mysqli_query(conectar(),$sql);
 
-header('Location:mantenedor_tipofamilia.php');
+header('Location:mantenedor_usuario.php');
 
 }
 function eliminar()
 {
-        $sql="DELETE FROM familia_pro  WHERE cod_pro=".$_POST['idoc'];
+        $sql="DELETE FROM usuario  WHERE cod_pro=".$_POST['idoc'];
         mysqli_query(conectar(),$sql);
-        header('Location:mantenedor_tipofamilia.php');
+        header('Location:mantenedor_usuario.php');
 
 
 }
