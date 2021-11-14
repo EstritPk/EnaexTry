@@ -11,7 +11,8 @@ $datos=mysqli_fetch_array($result);
 
 if($cont !=0)
 {
-    $_SESSION['user']=$datos['nombre']." ".$datos['appaterno']." ".$datos['apmaterno'];
+    $_SESSION['user']=$datos['nombre']." ".$datos['appaterno']." ".$datos['apmaterno']." ".$datos['rut'];
+  
     header("Location:home.php");  
 
 }else{
