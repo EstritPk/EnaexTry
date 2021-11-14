@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -33,6 +32,14 @@ if (isset($_SESSION['user'])) {
     </head>
 
     <body class="bg-info">
+
+        <?php
+            $con = mysqli_connect("localhost", "root", "root", "enaexbom");
+            $sql = "SELECT * FROM producto WHERE cod_pro=".$_GET['cod_pro'];
+            $result = mysqli_query($con, $sql);
+            $datos = mysqli_fetch_array($result)
+        ?>    
+
         <div id="session">
             <h2>Bienvenido <b><?php echo strtoupper($_SESSION['user']); ?></b></h2>
             <a href="home.php">Regresa home</a>
@@ -43,25 +50,27 @@ if (isset($_SESSION['user'])) {
             <div class="card-header">Mantenedor Producto</div>
             <div class="card-body" style="min-height: 350px;">
 
-                <form class="formulario" name="formprod" action="eliminar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
+                <form class="formulario" name="formprod" action="registrar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
 
-                    <input type="number" id="cod_pro" name="cod_pro" placeholder="Codigo" value="">
-                    <input type="text" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="">
-                    <textarea id="desc_pro" name="desc_pro" placeholder="Descripcion del Producto" value=""></textarea>
+                    <input type="number" id="cod_pro" name="cod_pro" placeholder="Codigo" value="<?php echo $datos['cod_pro'] ?>">
+                    <input type="text" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="<?php echo $datos['nombre_pro']; ?>">
+                    <textarea id="desc_pro" name="desc_pro" placeholder="Descripcion del Producto" value="<?php echo $datos['desc_pro']; ?>"></textarea>
                     <select id="tipo_pro" name="tipo_pro" placeholder="Tipo Producto"><br>>
-                        <option name="tipo_pro" value=" ">Seleccione Tipo de Producto</option>
+                        <option name="tipo_pro" value="">Seleccione Tipo de Producto</option>
                         <option name="tipo_pro" value="vestimenta">Vestimenta</option>
                         <option name="tipo_pro" value="aseo">Aseo</option>
                         <option name="tipo_pro" value="herramienta">Herramienta</option>
                         <option name="tipo_pro" value="lubricante">Lubricante</option>
                     </select>
                     <input type="file" id="foto" name="foto" required class="file" placeholder="Ingrese Imagen" value=""><br>
-                    <input type="text" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="">
+                    <input type="text" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="<?php echo $datos['modelo_pro'];?>">
 
                     <br>
                 </form>
             </div>
             <div class="card-footer">
+
+           
 
                 <?php
 
@@ -71,8 +80,8 @@ if (isset($_SESSION['user'])) {
                 <?php
                 } else {
                 ?>
-                    <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarforfam(this.value);">
-                    <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarforfam(this.value);">
+                    <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarformproducto(this.value);">
+                    <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarformproducto(this.value);">
                 <?php
                 }
                 ?>
