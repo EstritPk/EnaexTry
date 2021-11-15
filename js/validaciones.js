@@ -196,68 +196,55 @@ document.formfam.submit();
 }
 
 
-
-
-
-function validardeletusu()
-{
-    if(document.deleusu.frut.value==""){
-    alert("Debe Ingresar Rut del Usuario que desea Eliminar.");
-    document.deleusu.frut.focus();
-    return false;
-    }
-document.deleusu.submit();
-}
-
 function validarformulariousuario(accion) {
     document.formantu.frmaccion.value=accion;
     if((accion=="Registrar") || (accion=="Modificar"))
     {
-    if (document.formantu.frut.value == "") {
-        alert("Debe Ingresar Rut");
-        document.formantu.frut.focus();
-        return false;
-    }
-    if (document.formantu.fnombre.value == "") {
-        alert("Debe Ingresar Nombre");
-        document.formantu.fnombre.focus();
-        return false;
-    }
-    if (document.formantu.fappaterno.value == "") {
-        alert("Debe Ingresar Apellido Paterno");
-        document.formantu.fappaterno.focus();
-        return false;
-    }
-    if (document.formantu.fapmaterno.value == "") {
-        alert("Debe Ingresar Apellido Materno");
-        document.formantu.fapmaterno.focus();
-        return false;
-    }
-    if (document.formantu.fapmaterno.value == "") {
-        alert("Debe Ingresar Apellido Materno");
-        document.formantu.fapmaterno.focus();
-        return false;
-    }
-    if (document.formantu.fusuario.value == "") {
-        alert("Debe Ingresar Usuario");
-        document.formantu.fusuario.focus();
-        return false;
-    }
-    if (document.formantu.fcargo.value == "") {
-        alert("Debe Ingresar Cargo");
-        document.formantu.fcargo.focus();
-        return false;
-    }
-    if (document.formantu.fclave.value == "") {
-        alert("Debe Ingresar Clave");
-        document.formantu.fclave.focus();
-        return false;
-    }
-    if (document.formantu.festado.value == "") {
-        alert("Debe Ingresar Estado");
-        document.formantu.festado.focus();
-        return false;
-    }
+        if (document.formantu.frut.value == "") {
+            alert("Debe Ingresar Rut");
+            document.formantu.frut.focus();
+            return false;
+        }
+        if (document.formantu.fnombre.value == "") {
+            alert("Debe Ingresar Nombre");
+            document.formantu.fnombre.focus();
+            return false;
+        }
+        if (document.formantu.fappaterno.value == "") {
+            alert("Debe Ingresar Apellido Paterno");
+            document.formantu.fappaterno.focus();
+            return false;
+        }
+        if (document.formantu.fapmaterno.value == "") {
+            alert("Debe Ingresar Apellido Materno");
+            document.formantu.fapmaterno.focus();
+            return false;
+        }
+        if (document.formantu.fapmaterno.value == "") {
+            alert("Debe Ingresar Apellido Materno");
+            document.formantu.fapmaterno.focus();
+            return false;
+        }
+        if (document.formantu.fusuario.value == "") {
+            alert("Debe Ingresar Usuario");
+            document.formantu.fusuario.focus();
+            return false;
+        }
+        if (document.formantu.fcargo.value == "") {
+            alert("Debe Ingresar Cargo");
+            document.formantu.fcargo.focus();
+            return false;
+        }
+        if (document.formantu.fclave.value == "") {
+            alert("Debe Ingresar Clave");
+            document.formantu.fclave.focus();
+            return false;
+        }
+        if (document.formantu.festado.value == "") {
+            alert("Debe Ingresar Estado");
+            document.formantu.festado.focus();
+            return false;
+        }
     }
     document.formantu.submit();
 }
