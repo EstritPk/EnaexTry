@@ -1,7 +1,12 @@
 <?php
 include ("functions/setup.php");
 
-
+if(isset($_GET['sppro']))
+{
+    $sql="DELETE FROM solicitud_pro  WHERE Id=".$_GET['sppro'];
+        mysqli_query(conectar(),$sql);
+        header('Location:crear_sp.php');
+}
 //$sql="INSERT INTO solicitud_pro SET rut_usu='".$_POST['frut']."',nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['des_sp']."'";
 //mysqli_query(conectar(),$sql);
 
@@ -23,7 +28,7 @@ switch($op){
 }
 function ingresar()
 {                                            
-    $sql="INSERT INTO solicitud_pro SET rut_usu='".$_POST['frut']."',nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['des_sp']."'";
+    $sql="INSERT INTO solicitud_pro SET rut_usu='".$_POST['frut']."',nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['desc_sp']."'";
     mysqli_query(conectar(),$sql);
     
     
@@ -33,19 +38,23 @@ function ingresar()
 }
 function modificar()
 {
-    $sql="UPDATE   familia_pro SET desc_pro='".$_POST['desc_pro']."', categoria='".$_POST['categoria']."'  WHERE cod_pro=".$_POST['idoc'];
+    $sql="UPDATE   solicitud_pro SET nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['desc_sp']."'  WHERE Id=".$_POST['idoc'];
 mysqli_query(conectar(),$sql);
 
-header('Location:mantenedor_tipofamilia.php');
+header('Location:crear_sp.php');
 
 }
 function eliminar()
 {
-        $sql="DELETE FROM familia_pro  WHERE cod_pro=".$_POST['idoc'];
+        $sql="DELETE FROM solicitud_pro  WHERE Id=".$_POST['idoc'];
         mysqli_query(conectar(),$sql);
-        header('Location:mantenedor_tipofamilia.php');
+        header('Location:crear_sp.php');
 
 
+}
+function cancelar()
+{
+    header('Location:crear_sp.php');
 }
 ?>
 

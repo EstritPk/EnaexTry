@@ -2,7 +2,12 @@
 session_start();
 include ("functions/setup.php");
 if (isset($_SESSION['user']) ) {
-            
+    if(isset($_GET['Id']))
+    {
+        $sqlsp="select * from solicitud_pro where Id=".$_GET['Id'];
+        $ressp=mysqli_query(conectar(),$sqlsp);
+        $datossp=mysqli_fetch_array($ressp);
+    }          
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -74,20 +79,20 @@ if (isset($_SESSION['user']) ) {
                         while($datospro=mysqli_fetch_array($resultpro))
                         {
                     ?>
-                    <option value="<?php echo $datospro['cod_pro'];?>"><?php echo $datospro['nombre_pro'];?></option>
+                    <option name="sop" value="<?php echo $datospro['cod_pro'];?>"<?php if($datossp['codigo_prod']=$datospro['cod_pro']){?> selected <?php } ?>><?php echo $datospro['nombre_pro'];?></option>
                     <?php
                         }
                         ?>
                        </select> </div>
                     <div class="col">
-                    <input type="number" class="form-control p-2"  placeholder="Cantidad de Producto" value="" name="fcantidad">
+                    <input type="number" class="form-control p-2"  placeholder="Cantidad de Producto" value="<?php echo $datossp['cantidad'];?>" name="fcantidad">
                    </div>
                 </div> 
                
                     
                     
                 <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datosfa['cod_pro'];?>" >   
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datossp['Id'];?>" >   
                 
                         
                       <br>
@@ -102,13 +107,21 @@ if (isset($_SESSION['user']) ) {
         </div>
         <div class="card-footer justify-content-center ">
             <div class="  span7 center">
-               
+                 <?php 
+
+                    if(!isset($_GET['Id']))
+                        {
+                         ?>
                             <input type="button" class="btn btn-primary " value="Registrar" id="btnregistrar" onclick="validarsolicitud(this.value);">
                          
-                           
+                            <?php
+                            }else{
+                                ?>
                             <input type="button" class="btn btn-success " value="Modificar" id="btnmodificar" onclick="validarsolicitud(this.value);">
                             <input type="button" class="btn btn-danger " value="Eliminar" id="btneliminar" onclick="validarsolicitud(this.value);">
-                            
+                            <?php
+                            }
+                            ?>
                             
                             <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarsolicitud(this.value);">
                 </div>
@@ -126,6 +139,7 @@ if (isset($_SESSION['user']) ) {
             <tr>
                 <th>id</th>
                 <th>Rut solicitante</th>
+                <th>Nombre solicitante</th>
                 <th>Fecha</th>
                 <th>Producto</th>
                 <th>Cantidad</th>
@@ -136,13 +150,14 @@ if (isset($_SESSION['user']) ) {
         <?php  while($datos=mysqli_fetch_array($result)) { ?>
         <tr>
             <td><?php echo $datos['Id'];?></td>
+            <td><?php echo $datos['rut_usu'];?></td>
             <td><?php echo $datos['nombre_usu'];?></td>
             <td><?php echo $datos['fecha_sp'];?></td>
             <td><?php echo $datos['codigo_prod'];?></td>
             <td><?php echo $datos['cantidad'];?></td>
             <td><?php echo $datos['descripcion'];?></td>
             <td><?php echo $datos['estado'];?></td>
-            <td><a href="crea_sp.php?id=<?php echo $datos['id'];?>"><img src="images/update.png"></a> | <a href="registrar_tipofamilia.php?proeli=<?php echo $datos['id'];?>"><img src="images/delete.png"></a>
+            <td><a href="crear_sp.php?Id=<?php echo $datos['Id'];?>"><img src="images/update.png"></a> | <a href="registrar_sp.php?sppro=<?php echo $datos['Id'];?>"><img src="images/delete.png"></a>
             <?php
         }
         ?> 

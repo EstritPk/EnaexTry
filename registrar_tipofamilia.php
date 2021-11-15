@@ -48,4 +48,11 @@ function eliminar()
 
 
 }
+function cancelar()
+{
+    header('Location:mantenedor_tipofamilia.php');
+}
+
+
+
 ?>

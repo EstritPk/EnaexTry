@@ -49,10 +49,10 @@
                     <textarea name="desc_pro" class="form-control" id="desc_pro"  placeholder="Descripcion del Tipo de producto"></textarea><br>
                     <select id="categoria" class="form-control" name="categoria" placeholder="Categoria"><br>
                         <option name="categoria" value=" ">Seleccione el Tipo</option>
-                        <option name="categoria" value="Herramienta"<?php if($datosfa['categoria']="Herramienta"){?> selected <?php } ?>>Herrmaienta</option>
-                        <option name="categoria" value="Vestimenta"<?php if($datosfa['categoria']="Vestimenta"){?> selected <?php } ?> >Vestimenta</option>
-                        <option name="categoria" value="Aseo"<?php if($datosfa['categoria']="Aseo"){?> selected <?php } ?>>Aseo</option>
-                        <option name="categoria" value="Lubricante"<?php if($datosfa['categoria']="Lubricante"){?> selected <?php } ?>>Lubricante</option>
+                        <option name="categoria" value="Herramienta"<?php if($datosfa['categoria']=="Herramienta"){?> selected <?php } ?>>Herrmaienta</option>
+                        <option name="categoria" value="Vestimenta"<?php if($datosfa['categoria']=="Vestimenta"){?> selected <?php } ?> >Vestimenta</option>
+                        <option name="categoria" value="Aseo"<?php if($datosfa['categoria']=="Aseo"){?> selected <?php } ?>>Aseo</option>
+                        <option name="categoria" value="Lubricante"<?php if($datosfa['categoria']=="Lubricante"){?> selected <?php } ?>>Lubricante</option>
                     </select><br>
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
                     <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datosfa['cod_pro'];?>" >
