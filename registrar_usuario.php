@@ -3,11 +3,19 @@
 include ("functions/setup.php");
 //$con=mysqli_connect("localhost","root","root","enaexbom");
 
-$sql="INSERT INTO usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
+
+    if(isset($_GET['eliusu']))
+    {
+        $sql="DELETE FROM usuario  WHERE rut=".$_GET['eliusu'];
+            mysqli_query(conectar(),$sql);
+            header('Location:mantenedor_usuario.php');
+    }
+
+/*$sql="INSERT INTO usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
 clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
 mysqli_query(conectar(),$sql);
 
-header('Location:formulario.php');
+header('Location:mantenedor_usuario.php');*/
 
 
 
@@ -34,9 +42,9 @@ mysqli_query(conectar(),$sql);
 header('Location:mantenedor_usuario.php');
 
 
-if(isset($_GET['proeli']))
+if(isset($_GET['eliusu']))
 {
-    $sql="DELETE FROM usuario  WHERE usuario=".$_GET['proeli'];
+    $sql="DELETE FROM usuario  WHERE usuario=".$_GET['eliusu'];
         mysqli_query(conectar(),$sql);
         header('Location:mantenedor_usuario.php');
 }
@@ -53,7 +61,7 @@ header('Location:mantenedor_usuario.php');
 }
 function eliminar()
 {
-        $sql="DELETE FROM usuario  WHERE cod_pro=".$_POST['idoc'];
+        $sql="DELETE FROM usuario  WHERE rut=".$_POST['iusu'];
         mysqli_query(conectar(),$sql);
         header('Location:mantenedor_usuario.php');
 
