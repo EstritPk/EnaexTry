@@ -49,8 +49,8 @@
                     <?php
                 }else{
                     ?>
-                <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarforfam(this.value);">
-                <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarforfam(this.value);">
+                <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarformulariousuario(this.value);">
+                <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarformulariousuario(this.value);">
                 <?php
                     }
                     ?>
@@ -62,7 +62,8 @@
                 $sql = "SELECT * FROM usuario";
                 $result = mysqli_query($con,$sql);
             ?>
-        <br> <div class="container">                    
+        <br> 
+        <div class="container">                    
             <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
                 <tr>
                 <th>RUT</th>
@@ -84,9 +85,14 @@
                 <td style="min-width: 50px;"><?php echo $datos['usuario']; ?></td>
                 <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
                 <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
-                <td><?php echo $datos['estado']; } ?></td>
-                <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> <a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/delete.png"></a>
-                
+                <td><?php echo $datos['estado'];?></td>
+                <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> <a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/delete.png"></a></td>
+                <?php
+        }
+        ?> 
+         </td>
+           </tr>
+        
             </table>
         </div>
     </body>

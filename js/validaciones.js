@@ -21,8 +21,8 @@ function validarsolicitud(accion)
     {
   
     if(document.formsp.des_sp.value==""){
-    alert("Debe Ingresar Descripcion del tipo del Producto");
-    document.formsp.desc_sp.focus();
+    alert("Debe Ingresar Descripcion l Producto");
+    document.formsp.des_sp.focus();
     return false;
 }
 if (document.formsp.sop.value == "" || document.formsp.sop.value == 0) {
