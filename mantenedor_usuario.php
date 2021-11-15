@@ -60,7 +60,7 @@
                 <?php
                     }
                     ?>
-                <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarforfam(this.value);">
+                <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarformulariousuario(this.value);">
                  </div>
         </div>
             <?php
