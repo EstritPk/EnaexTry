@@ -2,9 +2,14 @@
 <?php
 
 session_start();
-$con = mysqli_connect("localhost", "root", "root", "enaexbom");
-
-if (isset($_SESSION['user'])) {
+include ("functions/setup.php");
+if(isset($_SESSION['user'])){
+    if(isset($_GET['cod_pro']))
+    {
+        $sqlcod="select * from producto where cod_pro=".$_GET['cod_pro'];
+        $rescod=mysqli_query(conectar(),$sqlcod);
+        $datos=mysqli_fetch_array($rescod);
+    }
 ?>
 
     <!DOCTYPE html>
@@ -43,7 +48,7 @@ if (isset($_SESSION['user'])) {
             <div class="card-header">Mantenedor Producto</div>
             <div class="card-body" style="min-height: 350px;">
 
-                <form class="formulario" name="formprod" action="eliminar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
+                <form class="formulario" name="formprod" action="registrar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
 
                     <input type="number" id="cod_pro" name="cod_pro" placeholder="Codigo" value="">
                     <input type="text" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="">
@@ -57,7 +62,8 @@ if (isset($_SESSION['user'])) {
                     </select>
                     <input type="file" id="foto" name="foto" required class="file" placeholder="Ingrese Imagen" value=""><br>
                     <input type="text" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="">
-
+                    <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datos['cod_pro'];?>" >
                     <br>
                 </form>
             </div>
@@ -67,16 +73,16 @@ if (isset($_SESSION['user'])) {
 
                 if (!isset($_GET['cod_pro'])) {
                 ?>
-                    <input type="button" onclick="validarformproducto()" id="btn" value="Registrar">
+                    <input type="button" onclick="validarformproducto(this.value)" id="btn" value="Registrar">
                 <?php
                 } else {
                 ?>
-                    <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarforfam(this.value);">
-                    <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarforfam(this.value);">
+                    <input type="button" class="btn btn-success" value="Modificar" id="btnmodificar" onclick="validarformproducto(this.value);">
+                    <input type="button" class="btn btn-danger" value="Eliminar" id="btneliminar" onclick="validarformproducto(this.value);">
                 <?php
                 }
                 ?>
-                <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarforfam(this.value);">
+                <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarformproducto(this.value);">
             </div>
         </div>
 
@@ -127,6 +133,7 @@ if (isset($_SESSION['user'])) {
     </body>
 
     </html>
+
 <?php
 } else {
     header("Location:login.php");
