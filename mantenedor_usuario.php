@@ -96,9 +96,8 @@
                 <?php
         }
         ?> 
-         </td>
-           </tr>
-        
+            </td>
+            </tr>
             </table>
         </div>
     </body>
