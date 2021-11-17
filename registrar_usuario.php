@@ -34,16 +34,19 @@ if(isset($_GET['eliusu']))
 }
 function modificar()
 {
-    $sql="UPDATE usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
-    clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
+    $sql="UPDATE INTO usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
+    clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' WHERE usuario='".$_POST['fusuario']."' ";
 mysqli_query(conectar(),$sql);
+
 header('Location:mantenedor_usuario.php');
+
 if(isset($_GET['eliusu']))
 {
     $sql="DELETE FROM usuario  WHERE usuario=".$_GET['eliusu'];
         mysqli_query(conectar(),$sql);
         header('Location:mantenedor_usuario.php');
 }
+
 }
 function eliminar()
 {
