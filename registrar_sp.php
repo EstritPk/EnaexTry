@@ -28,7 +28,7 @@ switch($op){
 }
 function ingresar()
 {                                            
-    $sql="INSERT INTO solicitud_pro SET rut_usu='".$_POST['frut']."',nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['desc_sp']."'";
+    $sql="INSERT INTO solicitud_pro SET rut_usu='".$_POST['frut']."',nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['des_sp']."'";
     mysqli_query(conectar(),$sql);
     
     
@@ -38,7 +38,7 @@ function ingresar()
 }
 function modificar()
 {
-    $sql="UPDATE   solicitud_pro SET nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['desc_sp']."'  WHERE Id=".$_POST['idoc'];
+    $sql="UPDATE   solicitud_pro SET nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['des_sp']."'  WHERE Id=".$_POST['idoc'];
 mysqli_query(conectar(),$sql);
 
 header('Location:crear_sp.php');

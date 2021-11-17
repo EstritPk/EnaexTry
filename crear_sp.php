@@ -97,9 +97,10 @@ if (isset($_SESSION['user']) ) {
                         
                       <br>
                    
-                <div class="mb-3">
-                    <textarea class="form-control" id="des_sp" name="des_sp" placeholder="Descripcion del Solitud" ></textarea>
-                </div>
+               
+                <textarea name="des_sp" class="form-control" id="des_sp"  placeholder="Descripcion del Solitud"></textarea><br>
+                    
+                
                 
                 
             </form>
