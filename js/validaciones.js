@@ -12,26 +12,24 @@ function validarlogin() {
     document.formlogin.submit();
 }
 
-function validarsolicitud(accion)
-{
-   
-    document.formsp.frmaccion.value=accion;
+function validarsolicitud(accion) {
 
-    if((accion=="Registrar") || (accion=="Modificar"))
-    {
-  
-    if(document.formsp.des_sp.value==""){
-    alert("Debe Ingresar Descripcion l Producto");
-    document.formsp.des_sp.focus();
-    return false;
-}
-if (document.formsp.sop.value == "" || document.formsp.sop.value == 0) {
-    alert("Debe Ingresar Categoria del Producto");
-    document.formsp.sop.focus();
-    return false;
-}
+    document.formsp.frmaccion.value = accion;
+
+    if ((accion == "Registrar") || (accion == "Modificar")) {
+
+        if (document.formsp.des_sp.value == "") {
+            alert("Debe Ingresar Descripcion l Producto");
+            document.formsp.des_sp.focus();
+            return false;
+        }
+        if (document.formsp.sop.value == "" || document.formsp.sop.value == 0) {
+            alert("Debe Ingresar Categoria del Producto");
+            document.formsp.sop.focus();
+            return false;
+        }
     }
-document.formsp.submit();
+    document.formsp.submit();
 }
 
 
@@ -87,46 +85,52 @@ function validarformulario() {
 }
 
 
-function validarformproducto()
-{
-    if (document.formprod.cod_pro.value == "") {
-        alert("Debe Ingresar Codigo del Producto");
-        document.formprod.cod_pro.focus();
-        return false;
-    }
-    if (document.formprod.nombre_pro.value == "") {
-        alert("Debe Ingresar Nombre del Producto");
-        document.formprod.nombre_pro.focus();
-        return false;
-    }
-    if (document.formprod.desc_pro.value == "") {
-        alert("Debe Ingresar una Descripcion de Producto");
-        document.formprod.desc_pro.focus();
-        return false;
-    }
-    if (document.formprod.tipo_pro.value == "" || document.formprod.tipo_pro.value == 0) {
-        alert("Debe Ingresar Tipo de Producto");
-        document.formprod.tipo_pro.focus();
-        return false;
-    }
-    if (document.formprod.foto.value == "") {
-        alert("Debe Ingresar Imagen del Producto");
-        document.formprod.foto.focus();
-        return false;
-    }
-    if (document.formprod.modelo_pro.value == "") {
-        alert("Debe Ingresar Modelo del Producto");
-        document.formprod.modelo_pro.focus();
-        return false;
+function validarformproducto(accion) {
+
+    document.formprod.frmaccion.value = accion;
+
+    if ((accion == "Registrar") || (accion == "Modificar")) {
+
+        if (document.formprod.cod_pro.value == "") {
+            alert("Debe Ingresar Codigo del Producto");
+            document.formprod.cod_pro.focus();
+            return false;
+        }
+        if (document.formprod.nombre_pro.value == "") {
+            alert("Debe Ingresar Nombre del Producto");
+            document.formprod.nombre_pro.focus();
+            return false;
+        }
+        if (document.formprod.desc_pro.value == "") {
+            alert("Debe Ingresar una Descripcion de Producto");
+            document.formprod.desc_pro.focus();
+            return false;
+        }
+        if (document.formprod.tipo_pro.value == "" || document.formprod.tipo_pro.value == 0) {
+            alert("Debe Ingresar Tipo de Producto");
+            document.formprod.tipo_pro.focus();
+            return false;
+        }
+        if (document.formprod.foto.value == "") {
+            alert("Debe Ingresar Imagen del Producto");
+            document.formprod.foto.focus();
+            return false;
+        }
+        if (document.formprod.modelo_pro.value == "") {
+            alert("Debe Ingresar Modelo del Producto");
+            document.formprod.modelo_pro.focus();
+            return false;
+        }
+
     }
 
-      document.formprod.submit();
+    document.formprod.submit();
 
 }
 
 
 
-function validarsinogin(){
+function validarsinogin() {
     if (document.formulariol.frutl.value == "") {
         alert("Debe Ingresar Rut");
         document.formulariol.frutl.focus();
@@ -162,7 +166,7 @@ function validarsinogin(){
         document.formulariol.fclavel.focus();
         return false;
     }
-    if (document.formulariol.festadol.value == "" || document.formulariol.festadol.value == 0)  {
+    if (document.formulariol.festadol.value == "" || document.formulariol.festadol.value == 0) {
         alert("Debe Ingresar Estado");
         document.formulariol.festadol.focus();
         return false;
@@ -173,33 +177,30 @@ function validarsinogin(){
 
 
 
-function validarforfam(accion)
-{
-   
-    document.formfam.frmaccion.value=accion;
+function validarforfam(accion) {
 
-    if((accion=="Registrar") || (accion=="Modificar"))
-    {
-  
-    if(document.formfam.desc_pro.value==""){
-    alert("Debe Ingresar Descripcion del tipo del Producto");
-    document.formfam.desc_pro.focus();
-    return false;
-}
-if (document.formfam.categoria.value == "" || document.formfam.categoria.value == 0) {
-    alert("Debe Ingresar Categoria del Producto");
-    document.formfam.categoria.focus();
-    return false;
-}
+    document.formfam.frmaccion.value = accion;
+
+    if ((accion == "Registrar") || (accion == "Modificar")) {
+
+        if (document.formfam.desc_pro.value == "") {
+            alert("Debe Ingresar Descripcion del tipo del Producto");
+            document.formfam.desc_pro.focus();
+            return false;
+        }
+        if (document.formfam.categoria.value == "" || document.formfam.categoria.value == 0) {
+            alert("Debe Ingresar Categoria del Producto");
+            document.formfam.categoria.focus();
+            return false;
+        }
     }
-document.formfam.submit();
+    document.formfam.submit();
 }
 
 
 function validarformulariousuario(accion) {
-    document.formantu.frmaccion.value=accion;
-    if((accion=="Registrar") || (accion=="Modificar"))
-    {
+    document.formantu.frmaccion.value = accion;
+    if ((accion == "Registrar") || (accion == "Modificar")) {
         if (document.formantu.frut.value == "") {
             alert("Debe Ingresar Rut");
             document.formantu.frut.focus();
