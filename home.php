@@ -4,94 +4,16 @@ if (isset($_SESSION['user'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <title>Formularios</title>
         <link rel="stylesheet" href="css/estilo_navbar.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body {
-                background-color: #004CD6;
-            }
-            .a {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            .card {
-                width: 250px;
-                height: 200px;
-                color: white;
-                margin: 1em;
-                border-radius: 15px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                padding: 0 1.5em;
-                text-align: center;
-                cursor: pointer;
-                position: relative;
-            }
-            .card::before,
-            .card::after {
-                content: '';
-                position: absolute;
-                background: #0D3B91;
-                width: 100%;
-                height: 40%;
-                z-index: -10;
-                border-radius: 15px 15px 0 0;
-                transition: all .4s;
-            }
-            .card::before {
-                top: 0;
-            }
-            .card:hover::before {
-                transform: translateY(-20px);
-            }
-            .card::after {
-                bottom: 10px;
-                height: 60%;
-                border-radius: 0 0 15px 15px;
-            }
-            .icon {
-                width: 60px;
-                height: 60px;
-                background: #DA0037;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-            }
-            .card:hover .icon {
-                box-shadow: 0 0 10px red;
-            }
-            .icon i {
-                font-size: 1.5em;
-            }
-            .card p {
-                margin: 0.5em 0;
-                font-size: 0.8em;
-                display: none;
-                opacity: 0;
-                transition: all .4s;
-            }
-            .card:hover p {
-                display: block;
-                opacity: 1;
-            }
-            .card h4 {
-                margin-top: 0.5em;
-            }
-        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
+
     <body>
         <div class="topnav">
             <a class="active">
@@ -99,45 +21,16 @@ if (isset($_SESSION['user'])) {
             </a>
             <a href="cerrar_sesion.php" class="cs">Cerrar Sesion</a>
         </div>
-        <div class="a">
-            <div class="card">
-                <div class="icon">
-                    <i class="bi bi-person-fill"></i>
-                </div>
-                <a href="modulo_mantenedor_usu.php" style="color:white; ">
-                    <h4>Registro de Usuarios</h4>
-                </a>
-                <p>Haz click aquí para Ingresar al Modulo de Usuarios.</p>
-            </div>
-            <div class="card">
-                <div class="icon">
-                <i class="bi bi-tools"></i>
-                </div>
-                <a href="mantenedor_producto.php" style="color:white; ">
-                <h4>Registro de Producto</h4>
-                </a>
-                <p>Haz click aquí para Registrar Productos.</p>
-            </div>
-            <div class="card">
-                <div class="icon">
-                <i class="bi bi-diagram-3"></i>
-                </div>
-                <a href="mantenedor_tipofamilia.php" style="color:white; ">
-                    <h4>Registro de Familia de Productos</h4>
-                </a>
-                <p>Haz click aquí para Registrar Familia de Productos.</p>
-            </div>
-            <div class="card">
-                <div class="icon">
-                <i class="bi bi-diagram-3"></i>
-                </div>
-                <a href="modulo_solicitudproducto.php" style="color:white; ">
-                    <h4>Solicitud de Productos</h4>
-                </a>
-                <p>Haz click aquí para Solicitar un Producto.</p>
-            </div>
+        <div class="card container" style="margin-top: 200px; min-height:400px; max-width:450px;">
+            <button type="button" class="btn btn-outline-primary" style="margin-top:50px;">Primary</button><br><br>
+            <button type="button" class="btn btn-outline-primary" style="">Primary</button><br><br>
+            <button type="button" class="btn btn-outline-primary" style="">Primary</button><br><br>
+            <button type="button" class="btn btn-outline-primary" style="">Primary</button>
         </div>
+
+
     </body>
+
     </html>
 <?php
 } else {
