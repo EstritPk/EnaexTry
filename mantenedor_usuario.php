@@ -2,6 +2,12 @@
  session_start();
  include ("functions/setup.php");
  if(isset($_SESSION['user'])){
+    if(isset($_GET['usuario']))
+    {
+        $sqlusu="select * from usuario where usuario=".$_GET['usuario'];
+        $resusu=mysqli_query(conectar(),$sqlusu);
+        $datosusu=mysqli_fetch_array($resusu);
+    }
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +43,7 @@
                     <option  name="festado" value="0">Inactivo</option>
                 </select><br><br>
                 <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                <input type="hidden" class="form-control" id="idc" name="idoc" value="<?php echo $datos['usuario'];?>">
+                <input type="hidden" class="form-control" id="idc" name="iusu" value="<?php echo $datos['usuario'];?>">
             </form>
         </div>
         <div class="card-footer">
@@ -54,7 +60,7 @@
                 <?php
                     }
                     ?>
-                <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarforfam(this.value);">
+                <input type="button" class="btn btn-secondary" value="Cancelar" id="btncancelar" onclick="validarformulariousuario(this.value);">
                  </div>
         </div>
             <?php
@@ -86,13 +92,12 @@
                 <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
                 <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
                 <td><?php echo $datos['estado'];?></td>
-                <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/update.png"></a> <a href="mantenedor_usuario.php?usuario=<?php echo $datos['usuario'];?>"><img src="images/delete.png"></a></td>
+                <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['rut'];?>"><img src="images/update.png"></a> <a href="registrar_usuario.php?eliusu=<?php echo $datos['rut'];?>"><img src="images/delete.png"></a></td>
                 <?php
         }
         ?> 
-         </td>
-           </tr>
-        
+            </td>
+            </tr>
             </table>
         </div>
     </body>

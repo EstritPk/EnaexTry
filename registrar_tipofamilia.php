@@ -9,8 +9,6 @@ if(isset($_GET['proeli']))
         mysqli_query(conectar(),$sql);
         header('Location:mantenedor_tipofamilia.php');
 }
-
-
 $op=$_POST['frmaccion'];
 
 switch($op){
@@ -29,30 +27,21 @@ function ingresar()
 mysqli_query(conectar(),$sql);
 
 header('Location:mantenedor_tipofamilia.php');
-
-
 }
 function modificar()
 {
     $sql="UPDATE   familia_pro SET desc_pro='".$_POST['desc_pro']."', categoria='".$_POST['categoria']."'  WHERE cod_pro=".$_POST['idoc'];
 mysqli_query(conectar(),$sql);
-
 header('Location:mantenedor_tipofamilia.php');
-
 }
 function eliminar()
 {
         $sql="DELETE FROM familia_pro  WHERE cod_pro=".$_POST['idoc'];
         mysqli_query(conectar(),$sql);
         header('Location:mantenedor_tipofamilia.php');
-
-
 }
 function cancelar()
 {
     header('Location:mantenedor_tipofamilia.php');
 }
-
-
-
 ?>

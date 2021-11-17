@@ -10,7 +10,6 @@ if(isset($_GET['proeli']))
         header('Location:mantenedor_producto.php');
 }
 
-
 $op=$_POST['frmaccion'];
 
 switch($op){
