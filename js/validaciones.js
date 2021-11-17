@@ -17,21 +17,18 @@ function validarsolicitud(accion) {
     document.formsp.frmaccion.value = accion;
 
     if ((accion == "Registrar") || (accion == "Modificar")) {
+
         if (document.formsp.fcantidad.value == "") {
             alert("Debe Ingresar cantidad");
-            document.formsp.des_sp.focus();
+            document.formsp.fcantidad.focus();
             return false;
         }
         if (document.formsp.des_sp.value == "") {
-            alert("Debe Ingresar Descripcion l Producto");
+            alert("Debe Ingresar Descripcion del Producto");
             document.formsp.des_sp.focus();
             return false;
         }
-        if (document.formsp.sop.value == "" || document.formsp.sop.value == 0) {
-            alert("Debe Ingresar Categoria del Producto");
-            document.formsp.sop.focus();
-            return false;
-        }
+        
     }
     document.formsp.submit();
 }
