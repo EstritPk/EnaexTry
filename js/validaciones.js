@@ -17,7 +17,11 @@ function validarsolicitud(accion) {
     document.formsp.frmaccion.value = accion;
 
     if ((accion == "Registrar") || (accion == "Modificar")) {
-
+        if (document.formsp.fcantidad.value == "") {
+            alert("Debe Ingresar cantidad");
+            document.formsp.des_sp.focus();
+            return false;
+        }
         if (document.formsp.des_sp.value == "") {
             alert("Debe Ingresar Descripcion l Producto");
             document.formsp.des_sp.focus();
