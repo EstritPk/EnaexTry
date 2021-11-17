@@ -1,14 +1,12 @@
-
 <?php
 
 session_start();
-include ("functions/setup.php");
-if(isset($_SESSION['user'])){
-    if(isset($_GET['cod_pro']))
-    {
-        $sqlcod="select * from producto where cod_pro=".$_GET['cod_pro'];
-        $rescod=mysqli_query(conectar(),$sqlcod);
-        $datos=mysqli_fetch_array($rescod);
+include("functions/setup.php");
+if (isset($_SESSION['user'])) {
+    if (isset($_GET['cod_pro'])) {
+        $sqlcod = "select * from producto where cod_pro=" . $_GET['cod_pro'];
+        $rescod = mysqli_query(conectar(), $sqlcod);
+        $datos = mysqli_fetch_array($rescod);
     }
 ?>
 
@@ -16,54 +14,67 @@ if(isset($_SESSION['user'])){
     <html lang="en">
 
     <head>
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
         <title>Formularios</title>
-        <link rel="stylesheet" href="css/estilo_formulario.css">
-        <link rel="stylesheet" href="css/estilo_tabla.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
 
+        <link rel="stylesheet" href="css/estilo_navbar.css">
         <script src="js/validaciones.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-        <style>
-            table {
-                margin-left: 0px;
-                max-width: auto;
-                min-height: auto;
-                float: left;
-            }
-        </style>
+
     </head>
 
-    <body class="bg-info">
+    <body >
         <div id="session">
-            <h2>Bienvenido <b><?php echo strtoupper($_SESSION['user']); ?></b></h2>
-            <a href="home.php">Regresa home</a>
-            <a href="cerrar_sesion.php">Cerrar Sesión</a>
+            <div class="topnav">
+                <a class="active">
+                    <h3>Bienvenido <b><?php echo strtoupper($_SESSION['user']); ?></b></h3>
+                </a>
+                <a href="cerrar_sesion.php" class="cs">Cerrar Sesion</a>
+                <a href="home.php" class="el">Home</a>
+                <a href="mantenedor_producto.php" class="el">Producto</a>
+                <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
+            </div>
         </div>
 
-        <div class="card container " id="form">
-            <div class="card-header">Mantenedor Producto</div>
-            <div class="card-body" style="min-height: 350px;">
+        <div class="card container " id="form" style="margin-top: 50px;">
+            <div class="card-header">
+                <h2 class="text-center">Mantenedor Producto</h2>
+            </div>
+            <div class="card-body">
 
                 <form class="formulario" name="formprod" action="registrar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
-
-                    <input type="number" id="cod_pro" name="cod_pro" placeholder="Codigo" value="">
-                    <input type="text" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="">
-                    <textarea id="desc_pro" name="desc_pro" placeholder="Descripcion del Producto" value=""></textarea>
-                    <select id="tipo_pro" name="tipo_pro" placeholder="Tipo Producto"><br>>
-                        <option name="tipo_pro" value=" ">Seleccione Tipo de Producto</option>
-                        <option name="tipo_pro" value="vestimenta">Vestimenta</option>
-                        <option name="tipo_pro" value="aseo">Aseo</option>
-                        <option name="tipo_pro" value="herramienta">Herramienta</option>
-                        <option name="tipo_pro" value="lubricante">Lubricante</option>
-                    </select>
-                    <input type="file" id="foto" name="foto" required class="file" placeholder="Ingrese Imagen" value=""><br>
-                    <input type="text" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="">
+                    <div class="row p-2">
+                        <div class="col">
+                            <input type="number" class="form-control" id="cod_pro" name="cod_pro" placeholder="Codigo" value="">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <textarea id="desc_pro" class="form-control" name="desc_pro" placeholder="Descripcion del Producto" value=""></textarea>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">
+                            <select id="tipo_pro" class="form-control" name="tipo_pro" placeholder="Tipo Producto"><br>>
+                                <option name="tipo_pro" value=" ">Seleccione Tipo de Producto</option>
+                                <option name="tipo_pro" value="vestimenta">Vestimenta</option>
+                                <option name="tipo_pro" value="aseo">Aseo</option>
+                                <option name="tipo_pro" value="herramienta">Herramienta</option>
+                                <option name="tipo_pro" value="lubricante">Lubricante</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input type="file" class="form-control" id="foto" name="foto" required class="file" placeholder="Ingrese Imagen" value="">
+                        </div>
+                    </div>
+                    <br>
+                    <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="">
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datos['cod_pro'];?>" >
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datos['cod_pro']; ?>">
                     <br>
                 </form>
             </div>
@@ -73,7 +84,7 @@ if(isset($_SESSION['user'])){
 
                 if (!isset($_GET['cod_pro'])) {
                 ?>
-                    <input type="button" onclick="validarformproducto(this.value)" id="btn" value="Registrar">
+                    <input type="button" class="btn btn-primary " onclick="validarformproducto(this.value)" id="btn" value="Registrar">
                 <?php
                 } else {
                 ?>
@@ -92,7 +103,7 @@ if(isset($_SESSION['user'])){
         $result = mysqli_query($con, $sql);
         ?>
         <br>
-        
+        <div class="container">
             <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
                 <tr>
                     <th>Codigo</th>
@@ -122,14 +133,15 @@ if(isset($_SESSION['user'])){
                             }
                             ?>
                         </td>
-                        <td><?php echo $datos['modelo_pro'];?></td>
-                        <td><a href="modificar_producto.php?cod_pro=<?php echo $datos['cod_pro'];?>" value="mod"><img src="images/update.png"></a> | <a href="registrar_producto.php?proeli=<?php echo $datos['cod_pro'];?>" value="del"><img src="images/delete.png"></a>
+                        <td><?php echo $datos['modelo_pro']; ?></td>
+                        <td><a href="modificar_producto.php?cod_pro=<?php echo $datos['cod_pro']; ?>" value="mod"><img src="images/update.png"></a> | <a href="registrar_producto.php?proeli=<?php echo $datos['cod_pro']; ?>" value="del"><img src="images/delete.png"></a>
                         <?php
-                             }
-                        ?> 
+                    }
+                        ?>
                     </tr>
             </table>
-  
+        </div>
+
     </body>
 
     </html>

@@ -49,4 +49,9 @@ function eliminar()
 
 
 }
+
+function cancelar()
+{
+    header('Location:mantenedor_producto.php');
+}
 ?> 
