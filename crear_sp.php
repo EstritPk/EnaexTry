@@ -79,13 +79,13 @@ if (isset($_SESSION['user']) ) {
                         while($datospro=mysqli_fetch_array($resultpro))
                         {
                     ?>
-                    <option name="sop" value="<?php echo $datospro['cod_pro'];?>"<?php if($datossp['codigo_prod']=$datospro['cod_pro']){?> selected <?php } ?>><?php echo $datospro['nombre_pro'];?></option>
+                    <option name="sop" value="<?php if(isset($_GET['Id'])) echo $datospro['cod_pro'];?>"<?php if(isset($_GET['Id'])) {if($datossp['codigo_prod']==$datospro['cod_pro']){?> selected <?php } } ?>><?php echo $datospro['nombre_pro'];?></option>
                     <?php
                         }
                         ?>
                        </select> </div>
                     <div class="col">
-                    <input type="number" class="form-control p-2"  placeholder="Cantidad de Producto" value="<?php if (isset($_GET['Id'])){ echo $datossp['cantidad'];}?>" name="fcantidad">
+                    <input type="number" class="form-control p-2"  placeholder="Cantidad de Producto" value="<?php if (isset($_GET['Id'])){ echo $datossp['cantidad'];}?>" id="fcantidad" name="fcantidad">
                    </div>
                 </div> 
                
