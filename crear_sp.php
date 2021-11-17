@@ -85,14 +85,14 @@ if (isset($_SESSION['user']) ) {
                         ?>
                        </select> </div>
                     <div class="col">
-                    <input type="number" class="form-control p-2"  placeholder="Cantidad de Producto" value="<?php echo $datossp['cantidad'];?>" name="fcantidad">
+                    <input type="number" class="form-control p-2"  placeholder="Cantidad de Producto" value="<?php if (isset($_GET['Id'])){ echo $datossp['cantidad'];}?>" name="fcantidad">
                    </div>
                 </div> 
                
                     
                     
                 <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
-                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datossp['Id'];?>" >   
+                    <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php if (isset($_GET['Id'])){ echo $datossp['Id'];}?>" >   
                 
                         
                       <br>
