@@ -93,7 +93,7 @@ if (isset($_SESSION['user'])) {
 
                 if (!isset($_GET['rut'])) {
                 ?>
-                    <input type="button"  class="btn btn-primary" onclick="validarformproducto()" id="btn" value="Registrar">
+                    <input type="button"  class="btn btn-primary" onclick="validarformulariousuario(this.value);" id="btn" value="Registrar">
                 <?php
                 } else {
                 ?>
