@@ -36,7 +36,7 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
         <div class="card container " id="form" style="margin-top: 50px;">
-            <div class="card-header">Registro de Tipo de Producto</div>
+            <h2 class="text-center">Mantenedor Tipo Familia Producto</h2>
             <div class="card-body">
 
                 <form class="formulario" name="formfam" action="registrar_tipofamilia.php" class="border border-warning" method="POST" enctype="multipart/form-data">

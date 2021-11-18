@@ -22,10 +22,10 @@ if (isset($_SESSION['user'])) {
             <a href="cerrar_sesion.php" class="cs">Cerrar Sesion</a>
         </div>
         <div class="card container" style="margin-top: 200px; min-height:400px; max-width:450px;">
-            <button type="button" class="btn btn-outline-primary" style="margin-top:50px;">Primary</button><br><br>
-            <button type="button" class="btn btn-outline-primary" style="">Primary</button><br><br>
-            <button type="button" class="btn btn-outline-primary" style="">Primary</button><br><br>
-            <button type="button" class="btn btn-outline-primary" style="">Primary</button>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_usuario.php'" style="margin-top:50px;">Mantenedor Usuario</button><br><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_producto.php'" style="">Mantenedor Producto</button><br><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_tipofamilia.php'" style="">Mantenedor Tipo Familia de Producto</button><br><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='crear_sp.php'" style="">Modulo Solicitud de Producto</button>
         </div>
 
 
@@ -34,6 +34,6 @@ if (isset($_SESSION['user'])) {
     </html>
 <?php
 } else {
-    //header("Location:login.php");
+    header("Location:error.php");
 }
 ?>
