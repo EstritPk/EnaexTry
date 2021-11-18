@@ -125,7 +125,7 @@ if (isset($_SESSION['user'])) {
                         <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
                         <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
                         <td><?php echo $datos['estado']; ?></td>
-                        <td><a href="mantenedor_usuario.php?usuario=<?php echo $datos['rut']; ?>"><img src="images/update.png"></a> <a href="registrar_usuario.php?eliusu=<?php echo $datos['rut']; ?>"><img src="images/delete.png"></a></td>
+                        <td><a href="modificar_usuario.php?usuario=<?php echo $datos['rut']; ?>"><img src="images/update.png"></a> <a href="registrar_usuario.php?eliusu=<?php echo $datos['rut']; ?>"><img src="images/delete.png"></a></td>
                     <?php
                 }
                     ?>
