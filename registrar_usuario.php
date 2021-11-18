@@ -29,11 +29,11 @@ header('Location:mantenedor_usuario.php');
 }
 function modificar()
 {
-    $sql="UPDATE INTO usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
-    clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' WHERE usuario='".$_POST['fusuario']."' ";
+    $sql="UPDATE usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
+    clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' WHERE rut='".$_POST['idoc'];
 mysqli_query(conectar(),$sql);
 
-header('Location:modificar_usuario.php');
+header('Location:mantenedor_usuario.php');
 
 
 }
