@@ -38,7 +38,7 @@ function modificar()
 {
   $sql="UPDATE producto SET cod_pro='".$_POST['cod_pro']."',nombre_pro='".$_POST['nombre_pro']."',desc_pro='".$_POST['desc_pro']."',tipo_pro='".$_POST['tipo_pro']."', foto='".$_FILES['foto']['name']."', modelo_pro='".$_POST['modelo_pro']."'  WHERE cod_pro=".$_POST['idoc'];
   mysqli_query(conectar(),$sql);
-  header('Location:modificar_producto.php');
+  header('Location:mantenedor_producto.php');
 }
 
 function eliminar()
