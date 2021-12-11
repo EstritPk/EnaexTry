@@ -93,8 +93,7 @@ if (isset($_SESSION['user'])) {
 
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
                     <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php if (isset($_GET['Id'])) {
-                                                                                                echo $datossp['Id'];
-                                                                                            } ?>">
+                                                                                                echo $datossp['Id'];} ?>">
 
 
                     <br>
