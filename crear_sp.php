@@ -74,7 +74,7 @@ if (isset($_SESSION['user'])) {
                                 $resultpro = mysqli_query(conectar(), $sqlpro);
                                 while ($datospro = mysqli_fetch_array($resultpro)) {
                                 ?>
-                                    <option name="sop" value="<?php if (isset($_GET['Id'])) echo $datospro['cod_pro']; ?>" <?php if (isset($_GET['Id'])) {
+                                    <option name="sop" value="<?php echo $datospro['cod_pro']; ?>" <?php if (isset($_GET['Id'])) {
                                                                                                                                 if ($datossp['codigo_prod'] == $datospro['cod_pro']) { ?> selected <?php }
                                                                                                                                                                                             } ?>><?php echo $datospro['nombre_pro']; ?></option>
                                 <?php
@@ -103,6 +103,7 @@ if (isset($_SESSION['user'])) {
 
 
 
+                    
 
                 </form>
 
