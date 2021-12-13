@@ -80,7 +80,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <br>
-                    <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="<?php echo $datos['modelo_pro'] ?>">
+                    <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="<?php if (isset($GET['Id'])) echo $datos['modelo_pro'] ?>">
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
                     <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datos['cod_pro']; ?>">
                     <br>
