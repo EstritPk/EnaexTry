@@ -48,23 +48,31 @@ if (isset($_SESSION['user'])) {
                 <form class="formulario" name="formprod" action="registrar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
                     <div class="row p-2">
                         <div class="col">
-                            <input type="number" class="form-control" id="cod_pro" name="cod_pro" placeholder="Codigo" value="">
+                            <input type="number" class="form-control" id="cod_pro" name="cod_pro" placeholder="Codigo" value="<?php echo $datos['cod_pro'] ?>">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="">
+                            <input type="text" class="form-control" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="<?php if (isset($_GET['cod_pro'])) {
+                                                                                                                                                echo $datos['nombre_pro'];
+                                                                                                                                            } ?>">
                         </div>
                     </div>
                     <div class="row p-2">
-                        <textarea id="desc_pro" class="form-control" name="desc_pro" placeholder="Descripcion del Producto" value=""></textarea>
+                        <textarea id="desc_pro" class="form-control" name="desc_pro" placeholder="Descripcion del Producto" value="" ><?php if (isset($_GET['cod_pro'])) { echo $datos['desc_pro'];} ?></textarea>
                     </div>
                     <div class="row p-2">
                         <div class="col">
                             <select id="tipo_pro" class="form-control" name="tipo_pro" placeholder="Tipo Producto"><br>>
-                                <option name="tipo_pro" value=" ">Seleccione Tipo de Producto</option>
-                                <option name="tipo_pro" value="vestimenta">Vestimenta</option>
-                                <option name="tipo_pro" value="aseo">Aseo</option>
-                                <option name="tipo_pro" value="herramienta">Herramienta</option>
-                                <option name="tipo_pro" value="lubricante">Lubricante</option>
+                            <?php
+                                 $sqlpro = "SELECT * FROM familia_pro";
+                                $resultpro = mysqli_query(conectar(), $sqlpro);
+                                while ($datospro = mysqli_fetch_array($resultpro)) {
+                                ?>
+                                    <option name="sop" value="<?php echo $datospro['cod_pro']; ?>" <?php if (isset($_GET['Id'])) {
+                                                                                                                                if ($datos['cod_pro'] == $datospro['cod_pro']) { ?> selected <?php }
+                                                                                                                                                                                            } ?>><?php echo $datospro['categoria']; ?></option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="col">
@@ -72,7 +80,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                     </div>
                     <br>
-                    <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="">
+                    <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="<?php echo $datos['modelo_pro'] ?>">
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
                     <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datos['cod_pro']; ?>">
                     <br>
@@ -134,7 +142,7 @@ if (isset($_SESSION['user'])) {
                             ?>
                         </td>
                         <td><?php echo $datos['modelo_pro']; ?></td>
-                        <td><a href="modificar_producto.php?cod_pro=<?php echo $datos['cod_pro']; ?>" value="mod"><img src="images/update.png"></a> | <a href="registrar_producto.php?proeli=<?php echo $datos['cod_pro']; ?>" value="del"><img src="images/delete.png"></a>
+                        <td><a href="mantenedor_producto.php?cod_pro=<?php echo $datos['cod_pro']; ?>" value="mod"><img src="images/update.png"></a> | <a href="registrar_producto.php?proeli=<?php echo $datos['cod_pro']; ?>" value="del"><img src="images/delete.png"></a>
                         <?php
                     }
                         ?>
