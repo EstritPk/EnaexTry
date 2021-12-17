@@ -67,7 +67,7 @@ if (isset($_SESSION['user'])) {
 
                     <div class="row p-2">
                         <div class="col">
-                            <select id="sop" name="sop" style="margin-left=35px" class="form-select p-2">
+                            <select id="sop" name="sop" class="form-select" aria-label="Default select example" style="margin-left=35px" class="form-select p-2">
                                 <option value="0">Seleccionar Producto</option>
                                 <?php
                                 $sqlpro = "select * from producto";

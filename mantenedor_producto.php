@@ -61,7 +61,7 @@ if (isset($_SESSION['user'])) {
                     </div>
                     <div class="row p-2">
                         <div class="col">
-                            <select id="tipo_pro" class="form-control" name="tipo_pro" placeholder="Tipo Producto"><br>>
+                            <select id="tipo_pro" class="form-control" name="tipo_pro"  class="form-select" aria-label="Default select example" placeholder="Tipo Producto"><br>>
                             <?php
                                  $sqlpro = "SELECT * FROM familia_pro";
                                 $resultpro = mysqli_query(conectar(), $sqlpro);
