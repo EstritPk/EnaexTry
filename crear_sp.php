@@ -133,7 +133,15 @@ if (isset($_SESSION['user'])) {
 
         <?php
         $con = mysqli_connect("localhost", "root", "root", "enaexbom");
-        $sql = "SELECT * FROM solicitud_pro where rut_usu=" . $datos = ($_SESSION['rut']);;
+       $sql = "SELECT * FROM solicitud_pro where rut_usu='".$_SESSION['rut']."'";
+
+
+
+
+
+
+
+
         $result = mysqli_query($con, $sql);
         ?>
         <br>
