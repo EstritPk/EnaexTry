@@ -224,11 +224,6 @@ function validarformulariousuario(accion) {
             document.formantu.fapmaterno.focus();
             return false;
         }
-        if (document.formantu.fapmaterno.value == "") {
-            alert("Debe Ingresar Apellido Materno");
-            document.formantu.fapmaterno.focus();
-            return false;
-        }
         if (document.formantu.fusuario.value == "") {
             alert("Debe Ingresar Usuario");
             document.formantu.fusuario.focus();

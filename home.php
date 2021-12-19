@@ -25,7 +25,8 @@ if (isset($_SESSION['user'])) {
             <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_usuario.php'" style="margin-top:50px;">Mantenedor Usuario</button><br><br>
             <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_producto.php'" style="">Mantenedor Producto</button><br><br>
             <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_tipofamilia.php'" style="">Mantenedor Tipo Familia de Producto</button><br><br>
-            <button type="button" class="btn btn-outline-primary" onclick="location.href='crear_sp.php'" style="">Modulo Solicitud de Producto</button>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='crear_sp.php'" style="">Modulo Solicitud de Producto</button><br><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='lista_entrega.php'" style="">Entregas</button>
         </div>
 
 
