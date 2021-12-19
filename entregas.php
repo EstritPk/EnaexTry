@@ -22,11 +22,26 @@ if (isset($_SESSION['user'])) {
         <script src="js/validaciones.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <style>
+            .mx-auto {
+                display: flex;
+                /*display: flex; el cual vuelve al contenedor un elemento flex*/
+
+                align-items: center;
+                /*justify-content: center; le decimos a los elementos del contenedor flex que se ubiquen al centro del eje principal eje horizontal*/
+
+                justify-content: center;
+                /*align-items: center; estamos diciendo que queremos que los elementos dentro del contenedor flex se ubiquen en el centro del eje secundario eje vertical*/
+
+                min-height: 50vh;
+                /*min-height: 100vh; que significa tome como altura mínima del contenedor el total del alto de la ventana del navegador web utilizado.*/
+            }
+        </style>
 
 
     </head>
 
-    <body >
+    <body>
         <div id="session">
             <div class="topnav">
                 <a class="active">
@@ -39,37 +54,38 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
 
-        <div class="card container " id="form" style="margin-top: 50px;">
+        <?php
+        $con = mysqli_connect("localhost", "root", "root", "enaexbom");
+        $sql = "SELECT * FROM producto";
+        $result = mysqli_query($con, $sql);
+        $datos =  mysqli_fetch_array($result);
+        ?>
+
+        <div class="card container " id="form" style="margin-top: 50px; max-width: 800px;">
             <div class="card-header">
-                <h2 class="text-center">Mantenedor Producto</h2>
+                <h2 class="text-center"><?php echo $datos['cod_pro'] ?></h2>
             </div>
             <div class="card-body">
 
                 <form class="formulario" name="formprod" action="registrar_producto.php" class="border border-warning" method="POST" enctype="multipart/form-data">
-                    <div class="row p-2">
-                        <div class="col">
-                            <input type="number" class="form-control" id="cod_pro" name="cod_pro" placeholder="Codigo" value="<?php echo $datos['cod_pro'] ?>">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" id="nombre_pro" name="nombre_pro" placeholder="Nombre Producto" value="<?php if (isset($_GET['cod_pro'])) {
-                                                                                                                                                echo $datos['nombre_pro'];
-                                                                                                                                            } ?>">
+                    <div class="container">
+                        <div class="row">
+                            <div class="mx-auto">
+                                <img src="images/fotos/<?php echo $datos['foto']; ?>" width="400px" height="400px">
+                            </div>
                         </div>
                     </div>
                     <div class="row p-2">
-                        <textarea id="desc_pro" class="form-control" name="desc_pro" placeholder="Descripcion del Producto" value="" ><?php if (isset($_GET['cod_pro'])) { echo $datos['desc_pro'];} ?></textarea>
-                    </div>
-                    <div class="row p-2">
                         <div class="col">
-                            <select id="tipo_pro" class="form-control" name="tipo_pro"  class="form-select" aria-label="Default select example" placeholder="Tipo Producto"><br>>
-                            <?php
-                                 $sqlpro = "SELECT * FROM familia_pro";
+                            <select id="tipo_pro" class="form-control" name="tipo_pro" class="form-select" aria-label="Default select example" placeholder="Tipo Producto"><br>>
+                                <?php
+                                $sqlpro = "SELECT * FROM familia_pro";
                                 $resultpro = mysqli_query(conectar(), $sqlpro);
                                 while ($datospro = mysqli_fetch_array($resultpro)) {
                                 ?>
                                     <option name="sop" value="<?php echo $datospro['cod_pro']; ?>" <?php if (isset($_GET['Id'])) {
-                                                                                                                                if ($datos['cod_pro'] == $datospro['cod_pro']) { ?> selected <?php }
-                                                                                                                                                                                            } ?>><?php echo $datospro['categoria']; ?></option>
+                                                                                                        if ($datos['cod_pro'] == $datospro['cod_pro']) { ?> selected <?php }
+                                                                                                                                                                    } ?>><?php echo $datospro['categoria']; ?></option>
                                 <?php
                                 }
                                 ?>
@@ -82,12 +98,12 @@ if (isset($_SESSION['user'])) {
                     <br>
                     <div class="row p-2">
                         <div class="col">
-                             <input type="text" class="form-control" id="stock_pro" name="stock_pro" placeholder="Stock del Producto" value="<?php if (isset($GET['cod_pro'])) echo $datos['stock_pro'] ?>">
+                            <input type="text" class="form-control" id="stock_pro" name="stock_pro" placeholder="Stock del Producto" value="<?php if (isset($GET['cod_pro'])) echo $datos['stock_pro'] ?>">
                         </div>
                         <div class="col">
-                        <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="<?php if (isset($GET['Id'])) echo $datos['modelo_pro'] ?>">
+                            <input type="text" class="form-control" id="modelo_pro" name="modelo_pro" placeholder="Modelo Producto" value="<?php if (isset($GET['Id'])) echo $datos['modelo_pro'] ?>">
                         </div>
-                    </div>     
+                    </div>
                     <input type="hidden" class="form-control" id="frmaccion" name="frmaccion">
                     <input type="hidden" class="form-control" id="idc" name="idoc" value=" <?php echo $datos['cod_pro']; ?>">
                     <br>
