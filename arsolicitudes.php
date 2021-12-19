@@ -53,7 +53,7 @@ if (isset($_SESSION['user'])) {
             <div class="row p-2">
                     <div class="col ">
                     <select id="sop" name="sop" class="form-select" aria-label="Default select example" style="margin-left=35px" class="form-select p-2">
-                                <option value="0">Seleccionar Producto</option>
+                                <option value="0">Seleccionar Opcion de Busqueda</option>
                                 
                                     <option name="sop" value="" >Rut</option>
                                     <option name="sop" value="" >Usuario</option>
