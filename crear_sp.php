@@ -167,7 +167,26 @@ if (isset($_SESSION['user'])) {
                         <td><?php echo $datos['codigo_prod']; ?></td>
                         <td><?php echo $datos['cantidad']; ?></td>
                         <td><?php echo $datos['descripcion']; ?></td>
-                        <td><?php echo $datos['estado']; ?></td>
+                        <td><?php
+              if($datos['estado']==0)
+              {
+                ?>
+                  <img src="images/nook.png">
+                <?php
+              }else{if($datos['estado']==1)
+                {
+                  ?>
+                    <img src="images/ok.png">
+                  <?php
+                }else{ 
+                    ?>
+                    <img src="images/xsp.png">
+                  <?php
+                }      
+
+                }
+                
+        ?></td>
                         <td><a href="crear_sp.php?Id=<?php echo $datos['Id']; ?>"><img src="images/update.png"></a> | <a href="registrar_sp.php?sppro=<?php echo $datos['Id']; ?>"><img src="images/delete.png"></a>
                         <?php
                     }

@@ -6,6 +6,19 @@ if(isset($_GET['sppro'])){
     $sql="DELETE FROM solicitud_pro  WHERE Id=".$_GET['sppro'];
         mysqli_query(conectar(),$sql);
         header('Location:crear_sp.php');
+}else{
+    if(isset($_GET['acsp'])){
+
+        $sql="UPDATE  solicitud_pro  SET  estado=1 WHERE Id=".$_GET['acsp'];
+            mysqli_query(conectar(),$sql);
+            header('Location:arsolicitudes.php');
+}else{
+    if(isset($_GET['rcsp'])){
+    $sql="UPDATE  solicitud_pro  SET  estado=2 WHERE Id=".$_GET['rcsp'];
+            mysqli_query(conectar(),$sql);
+            header('Location:arsolicitudes.php');
+}
+}
 }
 //$sql="INSERT INTO solicitud_pro SET rut_usu='".$_POST['frut']."',nombre_usu='".$_POST['fnombre']."',codigo_prod='".$_POST['sop']."',cantidad='".$_POST['fcantidad']."',estado=0,fecha_sp='".fechabd(fechahoy())."',descripcion='".$_post['des_sp']."'";
 //mysqli_query(conectar(),$sql);
@@ -60,14 +73,6 @@ function cancelar()
     header('Location:crear_sp.php');
 }
 ?>
-
-
-
-
-
-
-
-
 
 
 
