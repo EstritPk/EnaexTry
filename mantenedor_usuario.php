@@ -60,7 +60,12 @@ if (isset($_SESSION['user'])) {
                             <input type="text" class="form-control" id="fusuario" name="fusuario" placeholder="Usuario" value="">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="fcargo" name="fcargo" placeholder="Cargo" value="">
+                            
+                            <select id="fcargo"  class="form-control" aria-label="Default select example" style="margin-left=35px" class="form-select p-2" name="fcargo" placeholder="cargo"><br>>
+                                <option name="fcargo" value="Administrador">Administrador</option>
+                                <option name="fcargo" value="Usuario">Usuario</option>
+                                <option name="fcargo" value="Bodeguero">Bodeguero</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row p-2">
@@ -68,7 +73,7 @@ if (isset($_SESSION['user'])) {
                             <input type="password"  class="form-control" id="fclave" name="fclave" placeholder="Clave" value="">
                         </div>
                         <div class="col">
-                            <select id="festado"  class="form-control" name="festado" placeholder="Estado"><br>>
+                            <select id="festado"  class="form-control" aria-label="Default select example" style="margin-left=35px" class="form-select p-2" name="festado" placeholder="Estado"><br>>
                                 <option name="festado" value="1">Activo</option>
                                 <option name="festado" value="0">Inactivo</option>
                             </select>
@@ -111,7 +116,6 @@ if (isset($_SESSION['user'])) {
                     <th>APELLIDO MATERNO</th>
                     <th>USUARIO</th>
                     <th>CARGO</th>
-                    <th>CLAVE</th>
                     <th>ESTADO</th>
                     <th>EDITAR</th>
                 </tr>
@@ -123,7 +127,6 @@ if (isset($_SESSION['user'])) {
                         <td style="min-width: 200px;"><?php echo $datos['apmaterno']; ?></td>
                         <td style="min-width: 50px;"><?php echo $datos['usuario']; ?></td>
                         <td style="min-width: 100px;"><?php echo $datos['cargo']; ?></td>
-                        <td style="min-width: 100px;"><?php echo $datos['clave']; ?></td>
                         <td><?php echo $datos['estado']; ?></td>
                         <td><a href="modificar_usuario.php?usuario=<?php echo $datos['rut']; ?>"><img src="images/update.png"></a> <a href="registrar_usuario.php?eliusu=<?php echo $datos['rut']; ?>"><img src="images/delete.png"></a></td>
                     <?php
