@@ -22,8 +22,9 @@ if (isset($_SESSION['user'])) {
         <link rel="stylesheet" href="css/estilo_tabla.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="css/estilo_navbar.css">
-
+        <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/validaciones.js"></script>
+        <script src="js/busquedasp.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -44,8 +45,36 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
 
+        <div id="frmtxt">
+<div class="card">
+        <div class="card-header">Busqueda de Usuarios</div>
+        <div class="card-body">
+            <div class="container">
+            <div class="row p-2">
+                    <div class="col ">
+                    <select id="sop" name="sop" class="form-select" aria-label="Default select example" style="margin-left=35px" class="form-select p-2">
+                                <option value="0">Seleccionar Producto</option>
+                                
+                                    <option name="sop" value="" >Rut</option>
+                                    <option name="sop" value="" >Usuario</option>
+                                    <option name="sop" value="" >Producto/Heramientas</option>
+                                
+                            </select>
+                      </div>
+                            <div class="col">
+                        
+                        <input type="text" class="form-control" id="txtbusqueda" placeholder="ingresar texto a buscar" >
+                    </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
         <div class="card container " id="form" style="margin-top: 75px;">
-            <div class="card-header"><h2 class="text-center">Mantenedor Producto</h2></div>
+            <div class="card-header"><h2 class="text-center">Lista solicitude</h2></div>
             <div class="card-body" style="min-height: 350px;">
 
             <?php
@@ -55,13 +84,12 @@ if (isset($_SESSION['user'])) {
 
 
 
-
-
-
-
         $result = mysqli_query($con, $sql);
         ?>
         <br>
+        
+       <div id="grilla1">
+       </div>
         <div class="container">
             <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
                 <tr>
