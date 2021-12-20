@@ -56,7 +56,7 @@ if (isset($_SESSION['user'])) {
 
         <?php
         $con = mysqli_connect("localhost", "root", "root", "enaexbom");
-        $sql = "SELECT * FROM producto";
+        $sql = "SELECT * FROM producto ";
         $result = mysqli_query($con, $sql);
         $datos =  mysqli_fetch_array($result);
         ?>
@@ -71,9 +71,8 @@ if (isset($_SESSION['user'])) {
                     <div class="container">
                         <div class="row">
                             <div class="mx-auto">
-                                <img src="images/fotos/<?php echo $datos['foto']; ?>" width="400px" height="400px">
-                            </div>
-                        </div>
+                                             
+                                <img src="images/fotos/<?php echo $datos['foto'];?>" width="400px" height="400px">                                                                                               
                     </div>
                     <div class="row p-2">
                         <div class="col">
