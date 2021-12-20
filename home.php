@@ -19,12 +19,13 @@ if (isset($_SESSION['user'])) {
             </a>
             <a href="cerrar_sesion.php" class="cs">Cerrar Sesion</a>
         </div>
-        <div class="card container" style="margin-top: 200px; min-height:500px; max-width:450px;">
-            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_usuario.php'" style="margin-top:50px;">Mantenedor Usuario</button><br><br>
-            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_producto.php'" style="">Mantenedor Producto</button><br><br>
-            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_tipofamilia.php'" style="">Mantenedor Tipo Familia de Producto</button><br><br>
-            <button type="button" class="btn btn-outline-primary" onclick="location.href='crear_sp.php'" style="">Modulo Solicitud de Producto</button><br><br>
-            <button type="button" class="btn btn-outline-primary" onclick="location.href='lista_entrega.php'" style="">Entregas</button><br><br>
+        <div class="card container" style="margin-top: 200px; min-height:520px; max-width:450px;">
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_usuario.php'" style="margin-top:50px;">Mantenedor Usuario</button><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_producto.php'" style="">Mantenedor Producto</button><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='mantenedor_tipofamilia.php'" style="">Mantenedor Tipo Familia de Producto</button><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='crear_sp.php'" style="">Modulo Solicitud de Producto</button><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='lista_entrega.php'" style="">Entregas</button><br>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='agenda.php'" style="">Agenda</button><br>
             <button type="button" class="btn btn-outline-primary" onclick="location.href='arsolicitudes.php'" style="">lista de Solicitud de Producto</button>
         </div>
     </body>
