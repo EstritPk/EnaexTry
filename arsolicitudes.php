@@ -38,11 +38,8 @@ if (isset($_SESSION['user'])) {
                 margin-left: 35px;
             }
         </style>
-
     </head>
-
     <body>
-
         <div id="session">
             <div class="topnav">
                 <a class="active">
@@ -54,7 +51,6 @@ if (isset($_SESSION['user'])) {
                 <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
             </div>
         </div>
-
         <div id="frmtxt">
             <div class="card">
                 <div class="card-header">Busqueda de Usuarios</div>

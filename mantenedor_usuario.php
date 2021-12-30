@@ -16,9 +16,11 @@ if (isset($_SESSION['user'])) {
         <title>Formularios</title>
         <link rel="stylesheet" href="css/estilo_formulario.css">
         <link rel="stylesheet" href="css/estilo_tabla.css">
-        <link rel="stylesheet" href="css/estilo_navbar.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/estilo_navbar.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/validaciones.js"></script>
+        <script src="js/busquedasp.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <style>
@@ -41,6 +43,31 @@ if (isset($_SESSION['user'])) {
                 <a href="home.php" class="el">Home</a>
                 <a href="mantenedor_producto.php" class="el">Producto</a>
                 <a href="mantenedor_tipofamilia.php" class="el">Tipo Producto</a>
+            </div>
+        </div>
+        <div id="frmtxt">
+            <div class="card">
+                <div class="card-header">Busqueda de Usuarios</div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row p-2">
+                            <div class="col ">
+                                <select id="sop" name="sop" class="form-select" aria-label="Default select example" class="form-select p-2">
+                                    <option value="0">Seleccionar Opcion de Busqueda</option>
+
+                                    <option name="sop" value="">Rut</option>
+                                    <option name="sop" value="">Usuario</option>
+                                    <option name="sop" value="">Nombre</option>
+
+                                </select>
+                            </div>
+                            <div class="col">
+
+                                <input type="text" class="form-control" id="txtbusqueda" placeholder="ingresar texto a buscar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card container " id="form" style="margin-top: 50px;">

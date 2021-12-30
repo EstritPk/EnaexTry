@@ -13,16 +13,9 @@ switch($_POST['op'])
 function todos()
 {
     $sql = "SELECT * FROM solicitud_pro ";
-
-
-
-
         $result = mysqli_query(conectar(), $sql);
         ?>
         <br>
-        
-       
-       
             <table  class="table table-striped table-hover bg-light border border-primary">
                 <tr>
                     <th>id</th>
@@ -51,18 +44,13 @@ function todos()
                         ?>
                         </td>
                     </tr>
-
-
             </table>
     <?php
-
 }
-
 function like($txt)
 {
     $sql="select * from solicitud_pro where rut_usu like '%$txt%' or nombre_usu like '%$txt%' or descripcion like '%$txt%'";
     $result=mysqli_query(conectar(),$sql);
-
     ?>
    <table  class="table table-striped table-hover bg-light border border-primary">
                 <tr>
@@ -92,8 +80,6 @@ function like($txt)
                         ?>
                         </td>
                     </tr>
-
-
             </table>
     </table>
     <?php
