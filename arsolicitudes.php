@@ -27,7 +27,17 @@ if (isset($_SESSION['user'])) {
         <script src="js/busquedasp.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+        <style>
+            .card-container{
+                margin-top: 75px;
+            }
+            .card-body{
+                min-height: 35px;
+            }
+            .form-select{
+                margin-left: 35px;
+            }
+        </style>
 
     </head>
 
@@ -46,43 +56,46 @@ if (isset($_SESSION['user'])) {
         </div>
 
         <div id="frmtxt">
-<div class="card">
-        <div class="card-header">Busqueda de Usuarios</div>
-        <div class="card-body">
-            <div class="container">
-            <div class="row p-2">
-                    <div class="col ">
-                    <select id="sop" name="sop" class="form-select" aria-label="Default select example" style="margin-left=35px" class="form-select p-2">
-                                <option value="0">Seleccionar Opcion de Busqueda</option>
-                                
-                                    <option name="sop" value="" >Rut</option>
-                                    <option name="sop" value="" >Usuario</option>
-                                    <option name="sop" value="" >Producto/Heramientas</option>
-                                
-                            </select>
-                      </div>
+            <div class="card">
+                <div class="card-header">Busqueda de Usuarios</div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row p-2">
+                            <div class="col ">
+                                <select id="sop" name="sop" class="form-select" aria-label="Default select example" class="form-select p-2">
+                                    <option value="0">Seleccionar Opcion de Busqueda</option>
+
+                                    <option name="sop" value="">Rut</option>
+                                    <option name="sop" value="">Usuario</option>
+                                    <option name="sop" value="">Producto/Heramientas</option>
+
+                                </select>
+                            </div>
                             <div class="col">
-                        
-                        <input type="text" class="form-control" id="txtbusqueda" placeholder="ingresar texto a buscar" >
+
+                                <input type="text" class="form-control" id="txtbusqueda" placeholder="ingresar texto a buscar">
+                            </div>
+                        </div>
                     </div>
-                    </div>
-            </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+        
 
-<hr>
-        <div class="card container " id="form" style="margin-top: 75px;">
-            <div class="card-header"><h2 class="text-center">Lista solicitude</h2></div>
-            <div class="card-body" style="min-height: 350px;">
+        <hr>
+        <div class="card-container " id="form" >
+            <div class="card-header">
+                <h2 class="text-center">Lista solicitudes</h2>
+            </div>
+            <div class="card-body" ></div>
+        </div>
 
-          
+
         <br>
-        
-       <div id="grilla1">
-       </div>
-        
+
+        <div id="grilla1">
+        </div>
+
 
     </body>
 

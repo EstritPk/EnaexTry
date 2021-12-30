@@ -21,6 +21,14 @@ if (isset($_SESSION['user'])) {
         <script src="js/validaciones.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <style>
+        .container{
+            margin-left: 207px;
+        }
+        .form-control{
+            margin-left: 35px;
+        }
+        </style>
     </head>
 
     <body>
@@ -61,7 +69,7 @@ if (isset($_SESSION['user'])) {
                         </div>
                         <div class="col">
                             
-                            <select id="fcargo"  class="form-control" aria-label="Default select example" style="margin-left=35px" class="form-select p-2" name="fcargo" placeholder="cargo"><br>>
+                            <select id="fcargo"  class="form-control" aria-label="Default select example" style="" class="form-select p-2" name="fcargo" placeholder="cargo"><br>>
                                 <option name="fcargo" value="Administrador">Administrador</option>
                                 <option name="fcargo" value="Usuario">Usuario</option>
                                 <option name="fcargo" value="Bodeguero">Bodeguero</option>
@@ -73,7 +81,7 @@ if (isset($_SESSION['user'])) {
                             <input type="password"  class="form-control" id="fclave" name="fclave" placeholder="Clave" value="">
                         </div>
                         <div class="col">
-                            <select id="festado"  class="form-control" aria-label="Default select example" style="margin-left=35px" class="form-select p-2" name="festado" placeholder="Estado"><br>>
+                            <select id="festado"  class="form-control" aria-label="Default select example" style="" class="form-select p-2" name="festado" placeholder="Estado"><br>>
                                 <option name="festado" value="1">Activo</option>
                                 <option name="festado" value="0">Inactivo</option>
                             </select>
@@ -107,7 +115,7 @@ if (isset($_SESSION['user'])) {
         $result = mysqli_query($con, $sql);
         ?>
         <br>
-        <div class="container" style="margin-left: 207px;">
+        <div class="container" style="">
             <table id="grilla" class="table table-striped table-hover bg-light border border-primary">
                 <tr>
                     <th>RUT</th>

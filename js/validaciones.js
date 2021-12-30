@@ -11,6 +11,13 @@ function validarlogin() {
     }
     document.formlogin.submit();
 }
+function validarCaracteres($atributo)
+{
+    $atributosql = mysqli_real_escape_string(conectar(), $atributo);
+    $atributohtml = filter_var($atributosql, FILTER_SANITIZE_STRING);
+    
+    return $atributohtml;
+}
 
 function validarsolicitud(accion) {
 
