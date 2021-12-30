@@ -26,7 +26,7 @@ switch($op){
 function ingresar()
 {                                            
   
-$sql="INSERT INTO producto SET cod_pro='".$_POST['cod_pro']."',nombre_pro='".$_POST['nombre_pro']."',desc_pro='".$_POST['desc_pro']."',tipo_pro='".$_POST['tipo_pro']."', foto='".$_FILES['foto']['name']."', modelo_pro='".$_POST['modelo_pro']."' , stock_pro='".$_POST['stock_pro']."' ";
+$sql="INSERT INTO producto SET cod_pro='".validarCaracteres($_POST['cod_pro'])."',nombre_pro='".validarCaracteres($_POST['nombre_pro'])."',desc_pro='".validarCaracteres($_POST['desc_pro'])."',tipo_pro='".$_POST['tipo_pro']."', foto='".$_FILES['foto']['name']."', modelo_pro='".validarCaracteres($_POST['modelo_pro'])."' , stock_pro='".validarCaracteres($_POST['stock_pro'])."' ";
 mysqli_query(conectar(),$sql);
 
 move_uploaded_file($_FILES['foto']['tmp_name'],"images/fotos/".$_FILES['foto']['name']);
@@ -36,7 +36,7 @@ header('Location:mantenedor_producto.php');
 }
 function modificar()
 {
-  $sql="UPDATE producto SET cod_pro='".$_POST['cod_pro']."',nombre_pro='".$_POST['nombre_pro']."',desc_pro='".$_POST['desc_pro']."',tipo_pro='".$_POST['tipo_pro']."', foto='".$_FILES['foto']['name']."', modelo_pro='".$_POST['modelo_pro']."' , stock_pro='".$_POST['stock_pro']."' WHERE cod_pro=".$_POST['idoc'];
+  $sql="UPDATE producto SET cod_pro='".validarCaracteres($_POST['cod_pro'])."',nombre_pro='".validarCaracteres($_POST['nombre_pro'])."',desc_pro='".validarCaracteres($_POST['desc_pro'])."',tipo_pro='".$_POST['tipo_pro']."', foto='".$_FILES['foto']['name']."', modelo_pro='".validarCaracteres($_POST['modelo_pro'])."' , stock_pro='".validarCaracteres($_POST['stock_pro'])."' WHERE cod_pro=".$_POST['idoc'];
   mysqli_query(conectar(),$sql);
   header('Location:mantenedor_producto.php');
 }

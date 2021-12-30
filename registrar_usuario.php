@@ -21,16 +21,16 @@ switch($op){
 }
 function ingresar()
 {                                            
-    $sql="INSERT INTO usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
-clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
+    $sql="INSERT INTO usuario SET rut='".validarCaracteres($_POST['frut'])."', nombre='".validarCaracteres($_POST['fnombre'])."', appaterno='".validarCaracteres($_POST['fappaterno'])."', apmaterno='".validarCaracteres($_POST['fapmaterno'])."',
+clave='".validarCaracteres(md5($_POST['fclave']))."', usuario='".validarCaracteres($_POST['fusuario'])."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' ";
 mysqli_query(conectar(),$sql);
 header('Location:mantenedor_usuario.php');
 
 }
 function modificar()
 {
-    $sql="UPDATE usuario SET rut='".$_POST['frut']."', nombre='".$_POST['fnombre']."', appaterno='".$_POST['fappaterno']."', apmaterno='".$_POST['fapmaterno']."',
-    clave='".md5($_POST['fclave'])."', usuario='".$_POST['fusuario']."', estado='".$_POST['festado']."', cargo='".$_POST['fcargo']."' WHERE rut='".$_POST['idoc'];
+    $sql="UPDATE usuario SET rut='".validarCaracteres($_POST['frut'])."', nombre='".validarCaracteres($_POST['fnombre'])."', appaterno='".validarCaracteres($_POST['fappaterno'])."', apmaterno='".validarCaracteres($_POST['fapmaterno'])."',
+    clave='".validarCaracteres(md5($_POST['fclave']))."', usuario='".validarCaracteres($_POST['fusuario'])."', estado='".validarCaracteres($_POST['festado'])."', cargo='".validarCaracteres($_POST['fcargo'])."' WHERE rut='".$_POST['idoc'];
 mysqli_query(conectar(),$sql);
 
 header('Location:mantenedor_usuario.php');

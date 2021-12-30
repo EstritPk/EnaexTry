@@ -1,10 +1,18 @@
 <?php
 
+
 function conectar()
 {
     $con=mysqli_connect("localhost","root","root","enaexbom");
     return $con;
     
+}
+function validarCaracteres($atributo)
+{
+    $atributosql = mysqli_real_escape_string(conectar(), $atributo);
+    $atributohtml = filter_var($atributosql, FILTER_SANITIZE_STRING);
+    
+    return $atributohtml;
 }
 function fechahoy()
 {
