@@ -23,14 +23,14 @@ switch($op){
 }
 function ingresar()
 {                                            
-    $sql="INSERT INTO familia_pro SET desc_pro='".$_POST['desc_pro']."', categoria='".$_POST['categoria']."' ";
+    $sql="INSERT INTO familia_pro SET desc_pro='".validarCaracteres($_POST['desc_pro'])."', categoria='".$_POST['categoria']."' ";
 mysqli_query(conectar(),$sql);
 
 header('Location:mantenedor_tipofamilia.php');
 }
 function modificar()
 {
-    $sql="UPDATE   familia_pro SET desc_pro='".$_POST['desc_pro']."', categoria='".$_POST['categoria']."'  WHERE cod_pro=".$_POST['idoc'];
+    $sql="UPDATE   familia_pro SET desc_pro='".validarCaracteres($_POST['desc_pro'])."', categoria='".$_POST['categoria']."'  WHERE cod_pro=".$_POST['idoc'];
 mysqli_query(conectar(),$sql);
 header('Location:mantenedor_tipofamilia.php');
 }
